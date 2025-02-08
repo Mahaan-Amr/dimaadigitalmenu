@@ -1,0 +1,436 @@
+{
+  "sections": [
+    {
+      "category": "hot-coffee",
+      "items": [
+        {
+          "id": "1",
+          "category": "hot-coffee",
+          "name": {
+            "en": "Classic Espresso",
+            "fa": "اسپرسو کلاسیک"
+          },
+          "description": {
+            "en": "Rich and bold single-shot espresso made with premium arabica beans",
+            "fa": "اسپرسو تک شات غنی و پررنگ تهیه شده با دانه‌های عربیکا مرغوب"
+          },
+          "ingredients": {
+            "en": [
+              "Premium Arabica Coffee Beans",
+              "Filtered Water"
+            ],
+            "fa": [
+              "دانه‌های قهوه عربیکا مرغوب",
+              "آب فیلتر شده"
+            ]
+          },
+          "calories": 5,
+          "price": {
+            "en": 50,
+            "fa": 45000
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "2",
+          "category": "hot-coffee",
+          "name": {
+            "en": "Caramel Macchiato",
+            "fa": "کارامل ماکیاتو"
+          },
+          "description": {
+            "en": "Espresso with steamed milk and vanilla, topped with caramel sauce",
+            "fa": "اسپرسو با شیر بخارپز و وانیل، تزئین شده با سس کارامل"
+          },
+          "ingredients": {
+            "en": [
+              "Espresso",
+              "Steamed Milk",
+              "Vanilla Syrup",
+              "Caramel Sauce"
+            ],
+            "fa": [
+              "اسپرسو",
+              "شیر بخارپز",
+              "شربت وانیل",
+              "سس کارامل"
+            ]
+          },
+          "calories": 250,
+          "price": {
+            "en": 5.5,
+            "fa": 75000
+          },
+          "image": "",
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "category": "cold-coffee",
+      "items": [
+        {
+          "id": "3",
+          "category": "cold-coffee",
+          "name": {
+            "en": "Iced Latte",
+            "fa": "لاته یخی"
+          },
+          "description": {
+            "en": "Chilled espresso with cold milk and ice, perfect for hot days",
+            "fa": "اسپرسو سرد با شیر سرد و یخ، مناسب برای روزهای گرم"
+          },
+          "ingredients": {
+            "en": [
+              "Espresso",
+              "Cold Milk",
+              "Ice Cubes"
+            ],
+            "fa": [
+              "اسپرسو",
+              "شیر سرد",
+              "یخ"
+            ]
+          },
+          "calories": 180,
+          "price": {
+            "en": 4.5,
+            "fa": 65000
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "4",
+          "category": "cold-coffee",
+          "name": {
+            "en": "Mocha Frappuccino",
+            "fa": "موکا فراپوچینو"
+          },
+          "description": {
+            "en": "Blended coffee with chocolate, milk, and whipped cream",
+            "fa": "قهوه میکس شده با شکلات، شیر و خامه زده شده"
+          },
+          "ingredients": {
+            "en": [
+              "Coffee",
+              "Chocolate Sauce",
+              "Milk",
+              "Whipped Cream",
+              "Ice"
+            ],
+            "fa": [
+              "قهوه",
+              "سس شکلات",
+              "شیر",
+              "خامه زده شده",
+              "یخ"
+            ]
+          },
+          "calories": 380,
+          "price": {
+            "en": 6,
+            "fa": 85000
+          },
+          "image": "",
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "category": "cake-desserts",
+      "items": [
+        {
+          "id": "5",
+          "category": "cake-desserts",
+          "name": {
+            "en": "Chocolate Fudge Cake",
+            "fa": "کیک فاج شکلاتی"
+          },
+          "description": {
+            "en": "Rich chocolate cake with warm fudge center and vanilla ice cream",
+            "fa": "کیک شکلاتی غنی با مرکز فاج گرم و بستنی وانیلی"
+          },
+          "ingredients": {
+            "en": [
+              "Dark Chocolate",
+              "Flour",
+              "Eggs",
+              "Butter",
+              "Vanilla Ice Cream"
+            ],
+            "fa": [
+              "شکلات تلخ",
+              "آرد",
+              "تخم مرغ",
+              "کره",
+              "بستنی وانیلی"
+            ]
+          },
+          "calories": 450,
+          "price": {
+            "en": 7.5,
+            "fa": 95000
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "6",
+          "category": "cake-desserts",
+          "name": {
+            "en": "Tiramisu",
+            "fa": "تیرامیسو"
+          },
+          "description": {
+            "en": "Classic Italian dessert with coffee-soaked ladyfingers and mascarpone cream",
+            "fa": "دسر کلاسیک ایتالیایی با بیسکویت لیدی فینگر آغشته به قهوه و کرم ماسکارپونه"
+          },
+          "ingredients": {
+            "en": [
+              "Ladyfingers",
+              "Mascarpone",
+              "Coffee",
+              "Cocoa Powder"
+            ],
+            "fa": [
+              "بیسکویت لیدی فینگر",
+              "پنیر ماسکارپونه",
+              "قهوه",
+              "پودر کاکائو"
+            ]
+          },
+          "calories": 320,
+          "price": {
+            "en": 6.5,
+            "fa": 88000
+          },
+          "image": "",
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "category": "smoothies",
+      "items": [
+        {
+          "id": "7",
+          "category": "smoothies",
+          "name": {
+            "en": "Berry Blast Smoothie",
+            "fa": "اسموتی میکس توت"
+          },
+          "description": {
+            "en": "Mixed berries blended with yogurt and honey",
+            "fa": "مخلوط توت‌ها با ماست و عسل"
+          },
+          "ingredients": {
+            "en": [
+              "Mixed Berries",
+              "Yogurt",
+              "Honey",
+              "Ice"
+            ],
+            "fa": [
+              "مخلوط توت‌ها",
+              "ماست",
+              "عسل",
+              "یخ"
+            ]
+          },
+          "calories": 220,
+          "price": {
+            "en": 6,
+            "fa": 85000
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "8",
+          "category": "smoothies",
+          "name": {
+            "en": "Mango Paradise",
+            "fa": "پارادایس انبه"
+          },
+          "description": {
+            "en": "Fresh mango blended with coconut milk and passion fruit",
+            "fa": "انبه تازه میکس شده با شیر نارگیل و میوه پشن فروت"
+          },
+          "ingredients": {
+            "en": [
+              "Mango",
+              "Coconut Milk",
+              "Passion Fruit",
+              "Ice"
+            ],
+            "fa": [
+              "انبه",
+              "شیر نارگیل",
+              "پشن فروت",
+              "یخ"
+            ]
+          },
+          "calories": 240,
+          "price": {
+            "en": 6.5,
+            "fa": 92000
+          },
+          "image": "",
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "category": "breakfast",
+      "items": [
+        {
+          "id": "9",
+          "category": "breakfast",
+          "name": {
+            "en": "English Breakfast",
+            "fa": "صبحانه انگلیسی"
+          },
+          "description": {
+            "en": "Eggs, bacon, sausages, beans, mushrooms, and toast",
+            "fa": "تخم مرغ، بیکن، سوسیس، لوبیا، قارچ و نان تست"
+          },
+          "ingredients": {
+            "en": [
+              "Eggs",
+              "Bacon",
+              "Sausages",
+              "Baked Beans",
+              "Mushrooms",
+              "Toast"
+            ],
+            "fa": [
+              "تخم مرغ",
+              "بیکن",
+              "سوسیس",
+              "لوبیا پخته",
+              "قارچ",
+              "نان تست"
+            ]
+          },
+          "calories": 850,
+          "price": {
+            "en": 12,
+            "fa": 150000
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "10",
+          "category": "breakfast",
+          "name": {
+            "en": "Avocado Toast",
+            "fa": "تست آووکادو"
+          },
+          "description": {
+            "en": "Sourdough toast with mashed avocado, poached eggs, and chili flakes",
+            "fa": "نان ترش با آووکادو له شده، تخم مرغ پوچ و پولک فلفل"
+          },
+          "ingredients": {
+            "en": [
+              "Sourdough Bread",
+              "Avocado",
+              "Eggs",
+              "Chili Flakes",
+              "Sea Salt"
+            ],
+            "fa": [
+              "نان ترش",
+              "آووکادو",
+              "تخم مرغ",
+              "پولک فلفل",
+              "نمک دریا"
+            ]
+          },
+          "calories": 420,
+          "price": {
+            "en": 9.5,
+            "fa": 125000
+          },
+          "image": "",
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "category": "mocktails",
+      "items": [
+        {
+          "id": "11",
+          "category": "mocktails",
+          "name": {
+            "en": "Virgin Mojito",
+            "fa": "موهیتو بدون الکل"
+          },
+          "description": {
+            "en": "Fresh lime and mint muddled with sugar, topped with soda",
+            "fa": "لیمو و نعناع تازه با شکر و سودا"
+          },
+          "ingredients": {
+            "en": [
+              "Lime",
+              "Mint",
+              "Sugar",
+              "Soda Water",
+              "Ice"
+            ],
+            "fa": [
+              "لیمو",
+              "نعناع",
+              "شکر",
+              "آب سودا",
+              "یخ"
+            ]
+          },
+          "calories": 120,
+          "price": {
+            "en": 5,
+            "fa": 70000
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "12",
+          "category": "mocktails",
+          "name": {
+            "en": "Passion Fruit Spritz",
+            "fa": "اسپریتز پشن فروت"
+          },
+          "description": {
+            "en": "Passion fruit puree with elderflower cordial and sparkling water",
+            "fa": "پوره پشن فروت با شربت گل سیاه و آب گازدار"
+          },
+          "ingredients": {
+            "en": [
+              "Passion Fruit",
+              "Elderflower Cordial",
+              "Sparkling Water",
+              "Mint"
+            ],
+            "fa": [
+              "پشن فروت",
+              "شربت گل سیاه",
+              "آب گازدار",
+              "نعناع"
+            ]
+          },
+          "calories": 150,
+          "price": {
+            "en": 5.5,
+            "fa": 78000
+          },
+          "image": "",
+          "isAvailable": true
+        }
+      ]
+    }
+  ]
+}
