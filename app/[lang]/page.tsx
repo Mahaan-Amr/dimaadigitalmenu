@@ -1,11 +1,16 @@
-import type { Language } from '@/app/types/common';
-import type { MenuSection as MenuSectionType } from '@/app/types/menu';
-import ClientPage from '@/app/components/ClientPage';
+import type { Language } from '../types/common';
+import type { MenuSection as MenuSectionType } from '../types/menu';
+import ClientPage from '../components/ClientPage';
+import React from 'react';
 
 async function getMenuItems(): Promise<MenuSectionType[]> {
   console.log('[Page] Fetching menu items from API');
-  const response = await fetch('http://localhost:3000/api/menu', {
-    next: { revalidate: 60 }, // Cache for 60 seconds
+  const baseUrl = process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}` 
+    : 'http://localhost:3000';
+    
+  const response = await fetch(`${baseUrl}/api/menu`, {
+    cache: 'no-cache',
   });
   
   if (!response.ok) {
@@ -21,17 +26,14 @@ async function getMenuItems(): Promise<MenuSectionType[]> {
 export default async function Page({
   params,
 }: {
-  params: Promise<{ lang: Language }>;
+  params: { lang: Language };
 }) {
   console.log('[Page] Starting page render with params:', params);
   
   try {
-    const { lang } = await params;
-    console.log('[Page] Resolved language:', lang);
-    
     const menuItems = await getMenuItems();
-    console.log('[Page] Rendering ClientPage with lang:', lang);
-    return <ClientPage initialMenuItems={menuItems} lang={lang} />;
+    console.log('[Page] Rendering ClientPage with lang:', params.lang);
+    return <ClientPage initialMenuItems={menuItems} lang={params.lang} />;
   } catch (error) {
     console.error('[Page] Error in page render:', error);
     throw error;

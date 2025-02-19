@@ -2,23 +2,23 @@ import { Language } from '../types/common';
 import { notFound } from 'next/navigation';
 import Providers from '../components/Providers';
 import { LANGUAGES } from '../config/languages';
+import React from 'react';
 
-export default async function LocaleLayout({
+export default function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ lang: Language }>;
+  params: { lang: Language };
 }) {
-  // Await and validate language parameter
-  const { lang } = await params;
-  if (!LANGUAGES.includes(lang)) {
+  // Validate language parameter
+  if (!LANGUAGES.includes(params.lang)) {
     notFound();
   }
 
   return (
-    <div dir={lang === 'fa' ? 'rtl' : 'ltr'}>
-      <Providers lang={lang}>{children}</Providers>
+    <div dir={params.lang === 'fa' ? 'rtl' : 'ltr'}>
+      <Providers lang={params.lang}>{children}</Providers>
     </div>
   );
 } 
