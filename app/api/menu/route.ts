@@ -28,11 +28,20 @@ async function initializeMenuData() {
     const initialData = {
       sections: [
         {
+          category: 'hot-coffee',
+          items: []
+        },
+        {
+          category: 'cold-coffee',
+          items: []
+        },
+        {
           category: 'breakfast',
           items: []
         }
       ]
     };
+    console.log('[API] Writing initial data:', JSON.stringify(initialData, null, 2));
     await fs.writeFile(DATA_FILE, JSON.stringify(initialData, null, 2));
   }
 }
@@ -41,12 +50,28 @@ export async function GET() {
   console.log('[API] GET request received');
   try {
     await initializeMenuData();
+    console.log('[API] Reading menu data file');
     const data = await fs.readFile(DATA_FILE, 'utf-8');
-    const { sections } = JSON.parse(data);
-    console.log('[API] Successfully retrieved', sections.length, 'menu sections');
+    console.log('[API] Raw file contents:', data);
+    
+    const parsedData = JSON.parse(data);
+    console.log('[API] Parsed data:', JSON.stringify(parsedData, null, 2));
+    
+    const { sections } = parsedData;
+    console.log('[API] Extracted sections:', {
+      count: sections.length,
+      categories: sections.map((s: MenuSection) => s.category),
+      itemCounts: sections.map((s: MenuSection) => ({
+        category: s.category,
+        itemCount: s.items.length,
+        items: s.items.map(item => item.name.en)
+      }))
+    });
+    
     return NextResponse.json(sections);
   } catch (error) {
     console.error('[API] Error getting menu items:', error);
+    console.error('[API] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
     return NextResponse.json(
       { error: 'Failed to fetch menu items', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }

@@ -28,7 +28,11 @@ export default function MenuContent({ lang }: MenuContentProps) {
     const fetchMenuItems = async () => {
       try {
         setError(null);
-        const response = await fetch('/api/menu');
+        const response = await fetch('/api/menu', {
+          headers: {
+            'Accept': 'application/json',
+          },
+        });
         if (!response.ok) {
           throw new Error('Failed to fetch menu items');
         }
