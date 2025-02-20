@@ -1,84 +1,72 @@
 # Dimaa Digital Menu
 
-A bilingual (Farsi/English) digital menu web application for Dimaa Cafe, built with Next.js 13, TypeScript, and Tailwind CSS.
-
-## Features
+A modern, bilingual (English/Farsi) digital menu system built with Next.js 13+, featuring:
 
 - 🌙 Dark/Light mode support
-- 🌐 Bilingual support (Farsi/English)
-- 📱 Mobile-first, responsive design
-- 🎨 Beautiful animations and transitions
-- 🔄 RTL support for Farsi
-- 👨‍💼 Admin panel for menu management
+- 🌐 Bilingual support (English/Farsi)
+- 📱 Responsive design
+- ✨ Beautiful animations with Framer Motion
+- 🎨 Tailwind CSS styling
+- 🔒 Admin panel with authentication
+- 📸 Image upload functionality
+- 🎯 Category-based menu filtering
 
-## Prerequisites
+## Tech Stack
 
-- Node.js 18.x or later
-- npm 9.x or later
+- Next.js 13+
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- next-themes
+- next-i18next
+- React Hot Toast
 
 ## Getting Started
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd dimaadigitalmenu
-```
-
+1. Clone the repository
 2. Install dependencies:
-```bash
-npm install
-```
-
+   ```bash
+   npm install
+   ```
 3. Run the development server:
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+5. Start production server:
+   ```bash
+   npm start
+   ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
+
+- **Bilingual Support**: Full support for English and Farsi languages with RTL handling
+- **Theme Switching**: Automatic and manual dark/light mode switching
+- **Admin Panel**: Secure admin interface for menu management
+- **Category Management**: Organize menu items by categories
+- **Image Upload**: Support for menu item images
+- **Responsive Design**: Works on all device sizes
+- **Animations**: Smooth transitions and animations
+- **Type Safety**: Full TypeScript support
 
 ## Project Structure
 
-```
-dimaadigitalmenu/
-├── app/
-│   ├── (admin)/
-│   │   └── admin/         # Admin panel pages
-│   ├── components/        # Reusable components
-│   ├── context/          # React context providers
-│   ├── lib/              # Utility functions and configurations
-│   ├── types/            # TypeScript type definitions
-│   └── utils/            # Helper functions
-├── public/
-│   └── images/           # Static images
-└── package.json
-```
+- `/app` - Next.js 13+ app directory
+- `/components` - React components
+- `/context` - React context providers
+- `/types` - TypeScript type definitions
+- `/styles` - Global styles and CSS modules
+- `/public` - Static assets
 
-## Admin Panel
+## Environment Variables
 
-The admin panel is accessible at `/admin` and allows you to:
-- Create new menu items
-- Edit existing menu items
-- Delete menu items
-- Manage menu categories
+The following environment variables are required:
 
-## Customization
-
-### Adding New Menu Categories
-
-1. Add the new category to the `MenuCategory` type in `app/types/menu.ts`
-2. Add translations for the new category in `app/components/MenuSection.tsx`
-
-### Modifying Themes
-
-The theme configuration can be found in `app/lib/theme.config.ts`.
-
-## Contributing
-
-1. Create a feature branch
-2. Commit your changes
-3. Push to the branch
-4. Create a Pull Request
+- `VERCEL_URL` - Vercel deployment URL (automatically set on Vercel)
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License

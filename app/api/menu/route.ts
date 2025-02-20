@@ -25,7 +25,15 @@ async function initializeMenuData() {
   } catch {
     console.log('[API] Creating empty menu data file');
     await ensureDataDir();
-    await fs.writeFile(DATA_FILE, JSON.stringify({ sections: [] }));
+    const initialData = {
+      sections: [
+        {
+          category: 'breakfast',
+          items: []
+        }
+      ]
+    };
+    await fs.writeFile(DATA_FILE, JSON.stringify(initialData, null, 2));
   }
 }
 
@@ -34,13 +42,13 @@ export async function GET() {
   try {
     await initializeMenuData();
     const data = await fs.readFile(DATA_FILE, 'utf-8');
-    const sections = JSON.parse(data).sections;
+    const { sections } = JSON.parse(data);
     console.log('[API] Successfully retrieved', sections.length, 'menu sections');
     return NextResponse.json(sections);
   } catch (error) {
     console.error('[API] Error getting menu items:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch menu items' },
+      { error: 'Failed to fetch menu items', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }
@@ -78,7 +86,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('[API] Error saving menu item:', error);
     return NextResponse.json(
-      { error: 'Failed to save menu item' },
+      { error: 'Failed to save menu item', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }

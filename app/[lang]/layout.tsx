@@ -1,24 +1,26 @@
-import { Language } from '../types/common';
-import { notFound } from 'next/navigation';
-import Providers from '../components/Providers';
-import { LANGUAGES } from '../config/languages';
-import React from 'react';
+import '../globals.css'
+import type { Metadata } from 'next'
+import { LANGUAGES } from '../config/languages'
+import type { Language } from '../types/common'
+import LocaleLayoutClient from './locale-layout-client'
 
-export default function LocaleLayout({
+export const metadata: Metadata = {
+  title: 'Dimaa Digital Menu',
+  description: 'Digital Menu for Dimaa Restaurant',
+}
+
+export default async function LocaleLayout({
   children,
   params,
 }: {
-  children: React.ReactNode;
-  params: { lang: Language };
+  children: React.ReactNode
+  params: Promise<{ lang: Language }>
 }) {
-  // Validate language parameter
-  if (!LANGUAGES.includes(params.lang)) {
-    notFound();
+  const { lang } = await params;
+
+  if (!LANGUAGES.includes(lang)) {
+    throw new Error(`Invalid language: ${lang}`)
   }
 
-  return (
-    <div dir={params.lang === 'fa' ? 'rtl' : 'ltr'}>
-      <Providers lang={params.lang}>{children}</Providers>
-    </div>
-  );
+  return <LocaleLayoutClient lang={lang}>{children}</LocaleLayoutClient>
 } 
