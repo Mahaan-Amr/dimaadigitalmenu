@@ -1,7 +1,12 @@
 import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
-import type { MenuItem, MenuSection } from '@/app/types/menu';
+import type { 
+  MenuItem, 
+  MenuSection, 
+  MenuSectionType,
+  LanguageSpecificMenuItem 
+} from '@/app/types/menu';
 
 const DATA_FILE = path.join(process.cwd(), 'data', 'menu.json');
 
@@ -46,9 +51,43 @@ async function initializeMenuData() {
   }
 }
 
-export async function GET() {
+// Helper function to filter menu items based on language
+function filterMenuItemsByLanguage(sections: MenuSection[], language: 'en' | 'fa' = 'en'): MenuSectionType[] {
+  return sections.map((section) => {
+    const filteredItems = section.items.filter((item: LanguageSpecificMenuItem) => {
+      // Check if item should only be shown in specific languages
+      if (item.onlyShowIn && !item.onlyShowIn.includes(language)) {
+        return false;
+      }
+      
+      // Check if item has content for the requested language
+      if (
+        (!item.name || !item.name[language]) &&
+        (!item.description || !item.description[language]) &&
+        (!item.ingredients || !item.ingredients[language])
+      ) {
+        return false;
+      }
+      
+      return true;
+    });
+    
+    return {
+      category: section.category,
+      items: filteredItems
+    };
+  });
+}
+
+export async function GET(request: Request) {
   console.log('[API] GET request received');
   try {
+    // Get language from query parameter
+    const url = new URL(request.url);
+    const langParam = url.searchParams.get('lang') || 'en';
+    const language = (langParam === 'en' || langParam === 'fa') ? langParam : 'en';
+    console.log('[API] Requested language:', language);
+    
     await initializeMenuData();
     console.log('[API] Reading menu data file');
     const data = await fs.readFile(DATA_FILE, 'utf-8');
@@ -64,11 +103,23 @@ export async function GET() {
       itemCounts: sections.map((s: MenuSection) => ({
         category: s.category,
         itemCount: s.items.length,
-        items: s.items.map(item => item.name.en)
+        items: s.items.map((item: MenuItem) => 
+          item.name && typeof item.name.en === 'string' ? item.name.en : item.id
+        )
       }))
     });
     
-    return NextResponse.json(sections);
+    // Filter items based on language
+    const filteredSections = filterMenuItemsByLanguage(sections, language);
+    console.log(`[API] Filtered sections for language ${language}:`, {
+      count: filteredSections.length,
+      itemCounts: filteredSections.map(s => ({
+        category: s.category,
+        itemCount: s.items.length
+      }))
+    });
+    
+    return NextResponse.json(filteredSections);
   } catch (error) {
     console.error('[API] Error getting menu items:', error);
     console.error('[API] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
@@ -82,7 +133,7 @@ export async function GET() {
 export async function POST(request: Request) {
   console.log('[API] POST request received');
   try {
-    const item: MenuItem = await request.json();
+    const item: MenuItem | LanguageSpecificMenuItem = await request.json();
     console.log('[API] Saving menu item:', item.id);
 
     await initializeMenuData();

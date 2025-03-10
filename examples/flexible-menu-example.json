@@ -1,0 +1,97 @@
+{
+  "sections": [
+    {
+      "category": "hot-coffee",
+      "items": [
+        {
+          "id": "espresso-arabica-100",
+          "category": "hot-coffee",
+          "name": {
+            "en": "Single Espresso (100% Arabica)",
+            "fa": "اسپرسو سینگل (۱۰۰٪ عربیکا)"
+          },
+          "description": {
+            "en": "Rich single shot espresso made with 100% arabica beans",
+            "fa": "یک شات اسپرسو غنی با دانه‌های ۱۰۰٪ عربیکا"
+          },
+          "ingredients": {
+            "en": ["100% Arabica Coffee Beans", "Hot Water"],
+            "fa": ["دانه قهوه ۱۰۰٪ عربیکا", "آب داغ"]
+          },
+          "calories": 1,
+          "price": {
+            "en": "65000",
+            "fa": "35000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "espresso-arabica-60",
+          "category": "hot-coffee",
+          "name": {
+            "en": "Single Espresso (60% Arabica)",
+            "fa": "اسپرسو سینگل (۶۰٪ عربیکا)"
+          },
+          "description": {
+            "en": "Balanced single shot espresso made with 60% arabica and 40% robusta beans",
+            "fa": "یک شات اسپرسو متعادل با دانه‌های ۶۰٪ عربیکا و ۴۰٪ روبوستا"
+          },
+          "ingredients": {
+            "en": ["60% Arabica Coffee Beans", "40% Robusta Coffee Beans", "Hot Water"],
+            "fa": ["دانه قهوه ۶۰٪ عربیکا", "دانه قهوه ۴۰٪ روبوستا", "آب داغ"]
+          },
+          "calories": 1,
+          "price": {
+            "en": "70000",
+            "fa": "35000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "espresso-robusta-30",
+          "category": "hot-coffee",
+          "name": {
+            "fa": "اسپرسو سینگل (۳۰٪ عربیکا)"
+          },
+          "description": {
+            "fa": "یک شات اسپرسو قوی با دانه‌های ۳۰٪ عربیکا و ۷۰٪ روبوستا"
+          },
+          "ingredients": {
+            "fa": ["دانه قهوه ۳۰٪ عربیکا", "دانه قهوه ۷۰٪ روبوستا", "آب داغ"]
+          },
+          "calories": 1,
+          "price": {
+            "en": "",
+            "fa": "45000"
+          },
+          "image": "",
+          "isAvailable": true,
+          "onlyShowIn": ["fa"]
+        },
+        {
+          "id": "espresso-robusta-100",
+          "category": "hot-coffee",
+          "name": {
+            "fa": "اسپرسو سینگل (۱۰۰٪ روبوستا)"
+          },
+          "description": {
+            "fa": "یک شات اسپرسو بسیار قوی با دانه‌های ۱۰۰٪ روبوستا"
+          },
+          "ingredients": {
+            "fa": ["دانه قهوه ۱۰۰٪ روبوستا", "آب داغ"]
+          },
+          "calories": 1,
+          "price": {
+            "en": "",
+            "fa": "60000"
+          },
+          "image": "",
+          "isAvailable": true,
+          "onlyShowIn": ["fa"]
+        }
+      ]
+    }
+  ]
+} 

@@ -30,8 +30,8 @@
           },
           "calories": 320,
           "price": {
-            "en": 90000,
-            "fa": 70000
+            "en": 120000,
+            "fa": 78000
           },
           "image": "",
           "isAvailable": true
@@ -65,7 +65,7 @@
           },
           "calories": 450,
           "price": {
-            "en": 150000,
+            "en": 180000,
             "fa": 110000
           },
           "image": "",
@@ -100,8 +100,8 @@
           },
           "calories": 580,
           "price": {
-            "en": 180000,
-            "fa": 145000
+            "en": 210000,
+            "fa": 168000
           },
           "image": "",
           "isAvailable": true
@@ -135,8 +135,8 @@
           },
           "calories": 520,
           "price": {
-            "en": 168000,
-            "fa": 135000
+            "en": 190000,
+            "fa": 152000
           },
           "image": "",
           "isAvailable": true
@@ -164,8 +164,8 @@
           },
           "calories": 380,
           "price": {
-            "en": 114000,
-            "fa": 78000
+            "en": 140000,
+            "fa": 86000
           },
           "image": "",
           "isAvailable": true
@@ -203,8 +203,8 @@
           },
           "calories": 850,
           "price": {
-            "en": 282000,
-            "fa": 238000
+            "en": 320000,
+            "fa": 278000
           },
           "image": "",
           "isAvailable": true
@@ -234,8 +234,8 @@
           },
           "calories": 240,
           "price": {
-            "en": 90000,
-            "fa": 60000
+            "en": 100000,
+            "fa": 65000
           },
           "image": "",
           "isAvailable": true
@@ -244,8 +244,8 @@
           "id": "8",
           "category": "breakfast",
           "name": {
-            "en": "Spinach Side-up Eggs",
-            "fa": "نیمرو اسفناج"
+            "en": "Nargesi",
+            "fa": "نرگسی"
           },
           "description": {
             "en": "Fried eggs with fresh spinach",
@@ -267,8 +267,8 @@
           },
           "calories": 260,
           "price": {
-            "en": 108000,
-            "fa": 70000
+            "en": 130000,
+            "fa": 88000
           },
           "image": "",
           "isAvailable": true
@@ -300,8 +300,8 @@
           },
           "calories": 420,
           "price": {
-            "en": 150000,
-            "fa": 110000
+            "en": 180000,
+            "fa": 123000
           },
           "image": "",
           "isAvailable": true
@@ -338,8 +338,8 @@
           },
           "calories": 580,
           "price": {
-            "en": 168000,
-            "fa": 142000
+            "en": 250000,
+            "fa": 180000
           },
           "image": "",
           "isAvailable": true
@@ -369,8 +369,8 @@
           },
           "calories": 450,
           "price": {
-            "en": 132000,
-            "fa": 108000
+            "en": 160000,
+            "fa": 125000
           },
           "image": "",
           "isAvailable": true
@@ -400,8 +400,8 @@
           },
           "calories": 520,
           "price": {
-            "en": 144000,
-            "fa": 118000
+            "en": 192000,
+            "fa": 135000
           },
           "image": "",
           "isAvailable": true
@@ -431,8 +431,8 @@
           },
           "calories": 380,
           "price": {
-            "en": 144000,
-            "fa": 118000
+            "en": 198000,
+            "fa": 145000
           },
           "image": "",
           "isAvailable": true
@@ -464,8 +464,8 @@
           },
           "calories": 420,
           "price": {
-            "en": 150000,
-            "fa": 128000
+            "en": 190000,
+            "fa": 155000
           },
           "image": "",
           "isAvailable": true
@@ -498,8 +498,8 @@
           },
           "calories": 180,
           "price": {
-            "en": 84000,
-            "fa": 78000
+            "en": 120000,
+            "fa": 98000
           },
           "image": "",
           "isAvailable": true
@@ -529,8 +529,8 @@
           },
           "calories": 100,
           "price": {
-            "en": 84000,
-            "fa": 62000
+            "en": 120000,
+            "fa": 88000
           },
           "image": "",
           "isAvailable": true
@@ -562,8 +562,8 @@
           },
           "calories": 80,
           "price": {
-            "en": 84000,
-            "fa": 62000
+            "en": 150000,
+            "fa": 82000
           },
           "image": "",
           "isAvailable": true
@@ -595,8 +595,8 @@
           },
           "calories": 90,
           "price": {
-            "en": 84000,
-            "fa": 62000
+            "en": 150000,
+            "fa": 82000
           },
           "image": "",
           "isAvailable": true
@@ -606,7 +606,7 @@
           "category": "mocktails",
           "name": {
             "en": "Classic Lemonade",
-            "fa": "لیموناد (ساده/طعم‌دار)"
+            "fa": "لیموناد (ساده)"
           },
           "description": {
             "en": "Fresh lemonade with optional flavors",
@@ -628,8 +628,8 @@
           },
           "calories": 120,
           "price": {
-            "en": 84000,
-            "fa": 72000
+            "en": 150000,
+            "fa": 88000
           },
           "image": "",
           "isAvailable": true
@@ -663,8 +663,8 @@
           },
           "calories": 130,
           "price": {
-            "en": 84000,
-            "fa": 74000
+            "en": 150000,
+            "fa": 94000
           },
           "image": "",
           "isAvailable": true
@@ -696,8 +696,8 @@
           },
           "calories": 110,
           "price": {
-            "en": 84000,
-            "fa": 64000
+            "en": 150000,
+            "fa": 98000
           },
           "image": "",
           "isAvailable": true
@@ -729,8 +729,8 @@
           },
           "calories": 140,
           "price": {
-            "en": 114000,
-            "fa": 92000
+            "en": 150000,
+            "fa": 118000
           },
           "image": "",
           "isAvailable": true
@@ -762,8 +762,8 @@
           },
           "calories": 160,
           "price": {
-            "en": 114000,
-            "fa": 92000
+            "en": 150000,
+            "fa": 118000
           },
           "image": "",
           "isAvailable": true
@@ -795,41 +795,8 @@
           },
           "calories": 100,
           "price": {
-            "en": 114000,
-            "fa": 92000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "c11",
-          "category": "mocktails",
-          "name": {
-            "en": "Highball",
-            "fa": "های‌بال"
-          },
-          "description": {
-            "en": "Refreshing drink with watermelon base",
-            "fa": "نوشیدنی خنک بر پایه هندوانه"
-          },
-          "ingredients": {
-            "en": [
-              "Watermelon",
-              "Lime",
-              "Mint",
-              "Ice"
-            ],
-            "fa": [
-              "هندوانه",
-              "لیمو",
-              "نعناع",
-              "یخ"
-            ]
-          },
-          "calories": 120,
-          "price": {
-            "en": 114000,
-            "fa": 92000
+            "en": 150000,
+            "fa": 118000
           },
           "image": "",
           "isAvailable": true
@@ -861,8 +828,8 @@
           },
           "calories": 110,
           "price": {
-            "en": 114000,
-            "fa": 92000
+            "en": 165000,
+            "fa": 122000
           },
           "image": "",
           "isAvailable": true
@@ -888,8 +855,8 @@
           },
           "calories": 150,
           "price": {
-            "en": 120000,
-            "fa": 105000
+            "en": 175000,
+            "fa": 138000
           },
           "image": "",
           "isAvailable": true
@@ -926,8 +893,8 @@
           },
           "calories": 180,
           "price": {
-            "en": 144000,
-            "fa": 118000
+            "en": 190000,
+            "fa": 148000
           },
           "image": "",
           "isAvailable": true
@@ -959,8 +926,8 @@
           },
           "calories": 220,
           "price": {
-            "en": 144000,
-            "fa": 118000
+            "en": 190000,
+            "fa": 148000
           },
           "image": "",
           "isAvailable": true
@@ -993,7 +960,7 @@
           },
           "calories": 1,
           "price": {
-            "en": 54000,
+            "en": 70000,
             "fa": 35000
           },
           "image": "",

@@ -11,6 +11,74 @@ export type MenuCategory =
   | 'cake-desserts'
   | 'all';
 
+export type LanguageText = {
+  en: string;
+  fa: string;
+};
+
+export type LanguageArrayText = {
+  en: string[];
+  fa: string[];
+};
+
+export type OptionalLanguageText = {
+  en?: string;
+  fa?: string;
+};
+
+export type OptionalLanguageArrayText = {
+  en?: string[];
+  fa?: string[];
+};
+
+export type Price = {
+  en: string;
+  fa: string;
+};
+
+export type MenuItemType = {
+  id: string;
+  category: string;
+  name: LanguageText;
+  description: LanguageText;
+  ingredients: LanguageArrayText;
+  calories: number;
+  price: Price;
+  image: string;
+  isAvailable: boolean;
+};
+
+export type LanguageSpecificMenuItem = {
+  id: string;
+  category: string;
+  name: OptionalLanguageText;
+  description: OptionalLanguageText;
+  ingredients: OptionalLanguageArrayText;
+  calories: number;
+  price: Price;
+  image: string;
+  isAvailable: boolean;
+  onlyShowIn?: ('en' | 'fa')[];
+};
+
+export type MenuSectionType = {
+  category: string;
+  items: MenuItemType[];
+};
+
+export type FlexibleMenuSectionType = {
+  category: string;
+  items: LanguageSpecificMenuItem[];
+};
+
+export type MenuType = {
+  sections: MenuSectionType[];
+};
+
+export type FlexibleMenuType = {
+  sections: FlexibleMenuSectionType[];
+};
+
 export interface MenuItem {
   id: string;
   name: {
@@ -22,8 +90,8 @@ export interface MenuItem {
     fa: string;
   };
   price: {
-    en: number;
-    fa: number;
+    en: string;
+    fa: string;
   };
   ingredients: {
     en: string[];
@@ -33,6 +101,7 @@ export interface MenuItem {
   category: MenuCategory;
   image: string;
   isAvailable: boolean;
+  onlyShowIn?: ('en' | 'fa')[];
 }
 
 export interface MenuSection {

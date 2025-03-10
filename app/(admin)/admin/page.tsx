@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../../context/AuthContext';
 import ImageUpload from '../../components/ImageUpload';
+import AdminOnboarding from '../../components/AdminOnboarding';
 import type { MenuItem, MenuSection, MenuCategory } from '../../types/menu';
 
 const emptyMenuItem: MenuItem = {
@@ -14,9 +15,10 @@ const emptyMenuItem: MenuItem = {
   description: { fa: '', en: '' },
   ingredients: { fa: [], en: [] },
   calories: 0,
-  price: { fa: 0, en: 0 },
+  price: { fa: '', en: '' },
   image: '',
   isAvailable: true,
+  onlyShowIn: undefined
 };
 
 const categories: MenuCategory[] = [
@@ -37,11 +39,16 @@ export default function AdminPage() {
   const [isEditing, setIsEditing] = useState(false);
   const [sections, setSections] = useState<MenuSection[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [showOnboarding, setShowOnboarding] = useState(false);
   const { logout } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
     fetchMenuItems();
+    
+    // Check if we should show onboarding
+    const hasSeenOnboarding = localStorage.getItem('adminOnboardingCompleted') === 'true';
+    setShowOnboarding(!hasSeenOnboarding);
   }, []);
 
   const fetchMenuItems = async () => {
@@ -137,6 +144,7 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4">
+      {showOnboarding && <AdminOnboarding onClose={() => setShowOnboarding(false)} />}
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -159,6 +167,14 @@ export default function AdminPage() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={() => setShowOnboarding(true)}
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+              >
+                راهنما
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={handleLogout}
                 className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
               >
@@ -175,6 +191,107 @@ export default function AdminPage() {
                 exit={{ opacity: 0, height: 0 }}
                 className="space-y-6 overflow-hidden"
               >
+                {/* Language visibility section */}
+                <div className="bg-amber-50 p-4 rounded-lg border border-amber-200 mb-6">
+                  <h3 className="text-lg font-semibold mb-2">مشخص کردن زبان های نمایش</h3>
+                  <p className="text-gray-700 mb-4">
+                    تعیین کنید این آیتم در کدام منو(ها) نمایش داده شود. اگر فقط یک گزینه را انتخاب کنید، آیتم فقط در آن زبان نمایش داده می‌شود.
+                  </p>
+                  
+                  <div className="flex space-x-8 space-x-reverse">
+                    <div className="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="showInEnglish"
+                        checked={!selectedItem.onlyShowIn || selectedItem.onlyShowIn.includes('en')}
+                        onChange={(e) => {
+                          const showInFarsi = !selectedItem.onlyShowIn || selectedItem.onlyShowIn.includes('fa');
+                          const showInEnglish = e.target.checked;
+                          
+                          let onlyShowIn: ('en' | 'fa')[] | undefined = undefined;
+                          
+                          if (showInEnglish && showInFarsi) {
+                            // Show in both languages
+                            onlyShowIn = undefined;
+                          } else if (showInEnglish) {
+                            // Show only in English
+                            onlyShowIn = ['en'];
+                          } else if (showInFarsi) {
+                            // Show only in Farsi
+                            onlyShowIn = ['fa'];
+                          } else {
+                            // Default to both if none selected
+                            onlyShowIn = undefined;
+                          }
+                          
+                          setSelectedItem({
+                            ...selectedItem,
+                            onlyShowIn
+                          });
+                        }}
+                        className="ml-2 w-5 h-5"
+                      />
+                      <label htmlFor="showInEnglish" className="text-base font-medium">
+                        نمایش در منوی انگلیسی
+                      </label>
+                    </div>
+                    <div className="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="showInFarsi"
+                        checked={!selectedItem.onlyShowIn || selectedItem.onlyShowIn.includes('fa')}
+                        onChange={(e) => {
+                          const showInEnglish = !selectedItem.onlyShowIn || selectedItem.onlyShowIn.includes('en');
+                          const showInFarsi = e.target.checked;
+                          
+                          let onlyShowIn: ('en' | 'fa')[] | undefined = undefined;
+                          
+                          if (showInEnglish && showInFarsi) {
+                            // Show in both languages
+                            onlyShowIn = undefined;
+                          } else if (showInEnglish) {
+                            // Show only in English
+                            onlyShowIn = ['en'];
+                          } else if (showInFarsi) {
+                            // Show only in Farsi
+                            onlyShowIn = ['fa'];
+                          } else {
+                            // Default to both if none selected
+                            onlyShowIn = undefined;
+                          }
+                          
+                          setSelectedItem({
+                            ...selectedItem,
+                            onlyShowIn
+                          });
+                        }}
+                        className="ml-2 w-5 h-5"
+                      />
+                      <label htmlFor="showInFarsi" className="text-base font-medium">
+                        نمایش در منوی فارسی
+                      </label>
+                    </div>
+                  </div>
+                  
+                  {(!selectedItem.onlyShowIn || (selectedItem.onlyShowIn.includes('en') && selectedItem.onlyShowIn.includes('fa'))) && (
+                    <div className="mt-2 text-purple-700 text-sm font-medium py-1 px-2 bg-purple-50 rounded-md inline-block">
+                      این آیتم در هر دو منوی فارسی و انگلیسی نمایش داده می‌شود
+                    </div>
+                  )}
+                  
+                  {selectedItem.onlyShowIn && selectedItem.onlyShowIn.length === 1 && selectedItem.onlyShowIn[0] === 'en' && (
+                    <div className="mt-2 text-blue-700 text-sm font-medium py-1 px-2 bg-blue-50 rounded-md inline-block">
+                      این آیتم فقط در منوی انگلیسی نمایش داده می‌شود
+                    </div>
+                  )}
+                  
+                  {selectedItem.onlyShowIn && selectedItem.onlyShowIn.length === 1 && selectedItem.onlyShowIn[0] === 'fa' && (
+                    <div className="mt-2 text-green-700 text-sm font-medium py-1 px-2 bg-green-50 rounded-md inline-block">
+                      این آیتم فقط در منوی فارسی نمایش داده می‌شود
+                    </div>
+                  )}
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div>
@@ -255,18 +372,14 @@ export default function AdminPage() {
                         Price (USD)
                       </label>
                       <input
-                        type="number"
+                        type="text"
                         value={selectedItem.price.en}
                         onChange={(e) =>
                           setSelectedItem({
                             ...selectedItem,
-                            price: {
-                              ...selectedItem.price,
-                              en: parseFloat(e.target.value) || 0,
-                            },
+                            price: { ...selectedItem.price, en: e.target.value },
                           })
                         }
-                        step="0.01"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                       />
                     </div>
@@ -332,15 +445,12 @@ export default function AdminPage() {
                         Price (Toman)
                       </label>
                       <input
-                        type="number"
+                        type="text"
                         value={selectedItem.price.fa}
                         onChange={(e) =>
                           setSelectedItem({
                             ...selectedItem,
-                            price: {
-                              ...selectedItem.price,
-                              fa: parseInt(e.target.value) || 0,
-                            },
+                            price: { ...selectedItem.price, fa: e.target.value },
                           })
                         }
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
