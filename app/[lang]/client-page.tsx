@@ -6,7 +6,7 @@ import CategoryBar from '../components/CategoryBar';
 import { Language } from '../types/common';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
-import { MenuSection as MenuSectionType, MenuCategory } from '../types/menu';
+import { MenuSection as MenuSectionType, MenuCategory, ALL_CATEGORY } from '../types/menu';
 
 interface ClientPageProps {
   initialMenuItems: MenuSectionType[];
@@ -15,9 +15,9 @@ interface ClientPageProps {
 
 export default function ClientPage({ initialMenuItems, lang }: ClientPageProps) {
   const [menuItems] = useState<MenuSectionType[]>(initialMenuItems);
-  const [selectedCategory, setSelectedCategory] = useState<MenuCategory>('all');
+  const [selectedCategory, setSelectedCategory] = useState<MenuCategory>(ALL_CATEGORY);
 
-  const sections = selectedCategory === 'all'
+  const sections = selectedCategory === ALL_CATEGORY
     ? menuItems
     : menuItems.filter(section => section.category === selectedCategory);
 

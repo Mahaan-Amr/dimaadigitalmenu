@@ -4,8 +4,7 @@ import path from 'path';
 import type { 
   MenuItem, 
   MenuSection, 
-  MenuSectionType,
-  LanguageSpecificMenuItem 
+  MenuSectionType
 } from '@/app/types/menu';
 
 const DATA_FILE = path.join(process.cwd(), 'data', 'menu.json');
@@ -54,7 +53,7 @@ async function initializeMenuData() {
 // Helper function to filter menu items based on language
 function filterMenuItemsByLanguage(sections: MenuSection[], language: 'en' | 'fa' = 'en'): MenuSectionType[] {
   return sections.map((section) => {
-    const filteredItems = section.items.filter((item: LanguageSpecificMenuItem) => {
+    const filteredItems = section.items.filter((item: MenuItem) => {
       // Check if item should only be shown in specific languages
       if (item.onlyShowIn && !item.onlyShowIn.includes(language)) {
         return false;
@@ -133,8 +132,8 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   console.log('[API] POST request received');
   try {
-    const item: MenuItem | LanguageSpecificMenuItem = await request.json();
-    console.log('[API] Saving menu item:', item.id);
+    const item = await request.json();
+    console.log('[API] Saving menu item:', JSON.stringify(item, null, 2));
 
     await initializeMenuData();
     const data = await fs.readFile(DATA_FILE, 'utf-8');
@@ -161,6 +160,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('[API] Error saving menu item:', error);
+    console.error('[API] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
     return NextResponse.json(
       { error: 'Failed to save menu item', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }

@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../../context/AuthContext';
 import ImageUpload from '../../components/ImageUpload';
 import AdminOnboarding from '../../components/AdminOnboarding';
-import type { MenuItem, MenuSection, MenuCategory } from '../../types/menu';
+import { MenuItem, MenuSection, MenuCategory, PREDEFINED_CATEGORIES } from '../../types/menu';
 
 const emptyMenuItem: MenuItem = {
   id: '',
@@ -21,18 +21,8 @@ const emptyMenuItem: MenuItem = {
   onlyShowIn: undefined
 };
 
-const categories: MenuCategory[] = [
-  'cold-brews',
-  'cake-desserts',
-  'hot-coffee',
-  'cold-coffee',
-  'herbal-tea',
-  'hot-drinks',
-  'mocktails',
-  'smoothies',
-  'milkshakes',
-  'breakfast'
-];
+// Start with predefined categories, but allow for adding custom ones
+const initialCategories = [...PREDEFINED_CATEGORIES];
 
 export default function AdminPage() {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
@@ -40,6 +30,9 @@ export default function AdminPage() {
   const [sections, setSections] = useState<MenuSection[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showOnboarding, setShowOnboarding] = useState(false);
+  const [categories, setCategories] = useState<string[]>(initialCategories);
+  const [isManagingCategories, setIsManagingCategories] = useState(false);
+  const [newCategory, setNewCategory] = useState('');
   const { logout } = useAuth();
   const router = useRouter();
 
@@ -70,6 +63,8 @@ export default function AdminPage() {
 
   const handleSave = async (item: MenuItem) => {
     try {
+      console.log('[Admin] Saving menu item:', JSON.stringify(item, null, 2));
+      
       const response = await fetch('/api/menu', {
         method: 'POST',
         headers: {
@@ -79,14 +74,16 @@ export default function AdminPage() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to save menu item');
+        const errorData = await response.json().catch(() => ({}));
+        console.error('[Admin] Server error response:', errorData);
+        throw new Error(`Failed to save menu item: ${response.status} ${response.statusText}`);
       }
 
       await fetchMenuItems();
       setIsEditing(false);
       setSelectedItem(null);
     } catch (error) {
-      console.error('Error saving menu item:', error);
+      console.error('[Admin] Error saving menu item:', error);
     }
   };
 
@@ -119,6 +116,26 @@ export default function AdminPage() {
     router.push('/admin/login');
   };
 
+  const handleAddCategory = () => {
+    if (newCategory.trim() && !categories.includes(newCategory.trim())) {
+      // Add the new category
+      setCategories(prev => [...prev, newCategory.trim()]);
+      // Reset the input field
+      setNewCategory('');
+    }
+  };
+
+  const handleRemoveCategory = (categoryToRemove: string) => {
+    // Check if the category is a predefined one
+    if ((PREDEFINED_CATEGORIES as readonly string[]).includes(categoryToRemove)) {
+      // Don't allow removing predefined categories
+      return;
+    }
+    
+    // Remove the category
+    setCategories(prev => prev.filter(category => category !== categoryToRemove));
+  };
+
   const handleIngredientsChange = (
     lang: 'en' | 'fa',
     value: string,
@@ -145,6 +162,99 @@ export default function AdminPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4">
       {showOnboarding && <AdminOnboarding onClose={() => setShowOnboarding(false)} />}
+      
+      {/* Category Management Modal */}
+      <AnimatePresence>
+        {isManagingCategories && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 w-full max-w-md"
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                Manage Categories
+              </h2>
+              
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  Add New Category
+                </label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={newCategory}
+                    onChange={(e) => setNewCategory(e.target.value)}
+                    className="flex-1 rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                    placeholder="Category name"
+                  />
+                  <button
+                    onClick={handleAddCategory}
+                    className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700"
+                    disabled={!newCategory.trim() || categories.includes(newCategory.trim())}
+                  >
+                    Add
+                  </button>
+                </div>
+              </div>
+              
+              <div className="mb-6">
+                <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
+                  Current Categories
+                </h3>
+                <div className="space-y-2 max-h-60 overflow-y-auto">
+                  {categories.map((category) => (
+                    <div
+                      key={category}
+                      className="flex items-center justify-between p-2 rounded-md bg-gray-50 dark:bg-gray-700"
+                    >
+                      <span className="text-gray-700 dark:text-gray-300">
+                        {category}
+                      </span>
+                      {!(PREDEFINED_CATEGORIES as readonly string[]).includes(category) && (
+                        <button
+                          onClick={() => handleRemoveCategory(category)}
+                          className="text-red-500 hover:text-red-700"
+                          aria-label="Remove category"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="flex justify-end">
+                <button
+                  onClick={() => setIsManagingCategories(false)}
+                  className="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600"
+                >
+                  Close
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -163,6 +273,14 @@ export default function AdminPage() {
                 className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
               >
                 Add New Item
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => setIsManagingCategories(true)}
+                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+              >
+                Manage Categories
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.02 }}
@@ -310,7 +428,7 @@ export default function AdminPage() {
                       >
                         {categories.map((category) => (
                           <option key={category} value={category}>
-                            {category}
+                            {category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ')}
                           </option>
                         ))}
                       </select>

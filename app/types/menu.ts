@@ -1,15 +1,22 @@
-export type MenuCategory = 
-  | 'breakfast'
-  | 'hot-coffee'
-  | 'cold-coffee'
-  | 'mocktails'
-  | 'smoothies'
-  | 'milkshakes'
-  | 'hot-drinks'
-  | 'cold-brews'
-  | 'herbal-tea'
-  | 'cake-desserts'
-  | 'all';
+// Original predefined categories, kept for reference
+export const PREDEFINED_CATEGORIES = [
+  'breakfast',
+  'hot-coffee',
+  'cold-coffee',
+  'mocktails',
+  'smoothies',
+  'milkshakes',
+  'hot-drinks',
+  'cold-brews',
+  'herbal-tea',
+  'cake-desserts',
+] as const;
+
+// Allow for dynamic categories by defining MenuCategory as a string type
+export type MenuCategory = string;
+
+// Special category for showing all items
+export const ALL_CATEGORY = 'all';
 
 export type LanguageText = {
   en: string;
