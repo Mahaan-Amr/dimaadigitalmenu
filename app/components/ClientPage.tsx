@@ -26,15 +26,11 @@ export default function ClientPage({ initialMenuItems, lang }: ClientPageProps) 
     console.log('[ClientPage] Setting document direction for language:', lang);
     document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
     
-    // Set dark background for the app
-    document.body.style.backgroundColor = '#090A0F';
-    document.documentElement.style.backgroundColor = '#090A0F';
-    
-    console.log('[ClientPage] Applied dark background');
+    // No longer forcing dark background colors since we're using Tailwind's theme system
+    console.log('[ClientPage] Document direction set');
     
     return () => {
-      document.body.style.backgroundColor = '';
-      document.documentElement.style.backgroundColor = '';
+      // Cleanup if needed
     };
   }, [lang]);
 
@@ -48,7 +44,7 @@ export default function ClientPage({ initialMenuItems, lang }: ClientPageProps) 
   console.log('[ClientPage] Available categories:', categories);
 
   return (
-    <main className="min-h-screen relative overflow-hidden bg-[#090A0F]">
+    <main className="min-h-screen relative overflow-hidden bg-white dark:bg-gray-900">
       {/* Particle animation background */}
       <ParticleBackground category={selectedCategory} />
       

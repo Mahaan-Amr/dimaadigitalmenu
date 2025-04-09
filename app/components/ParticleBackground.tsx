@@ -168,11 +168,6 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ category }) => 
           }
         }
         
-        /* Force dark background */
-        body, html {
-          background-color: #090A0F !important;
-        }
-        
         .themed-particle {
           user-select: none;
           will-change: transform;
