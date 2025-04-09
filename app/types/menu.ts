@@ -1,8 +1,8 @@
 // Original predefined categories, kept for reference
 export const PREDEFINED_CATEGORIES = [
-  'breakfast',
   'hot-coffee',
   'cold-coffee',
+  'breakfast',
   'mocktails',
   'smoothies',
   'milkshakes',
@@ -17,6 +17,15 @@ export type MenuCategory = string;
 
 // Special category for showing all items
 export const ALL_CATEGORY = 'all';
+
+// Interface for category with bilingual names
+export interface Category {
+  id: string;
+  name: {
+    en: string;
+    fa: string;
+  };
+}
 
 export type LanguageText = {
   en: string;

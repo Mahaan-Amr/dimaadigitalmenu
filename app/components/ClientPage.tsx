@@ -7,6 +7,7 @@ import { Language } from '../types/common';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 import { MenuSection as MenuSectionType, MenuCategory } from '../types/menu';
+import ParticleBackground from './ParticleBackground';
 
 interface ClientPageProps {
   initialMenuItems: MenuSectionType[];
@@ -20,9 +21,21 @@ export default function ClientPage({ initialMenuItems, lang }: ClientPageProps) 
   const [menuItems] = useState<MenuSectionType[]>(initialMenuItems);
   const [selectedCategory, setSelectedCategory] = useState<MenuCategory>('all');
 
+  // Apply background styling when the component mounts
   useEffect(() => {
     console.log('[ClientPage] Setting document direction for language:', lang);
     document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+    
+    // Set dark background for the app
+    document.body.style.backgroundColor = '#090A0F';
+    document.documentElement.style.backgroundColor = '#090A0F';
+    
+    console.log('[ClientPage] Applied dark background');
+    
+    return () => {
+      document.body.style.backgroundColor = '';
+      document.documentElement.style.backgroundColor = '';
+    };
   }, [lang]);
 
   const sections = selectedCategory === 'all'
@@ -35,9 +48,12 @@ export default function ClientPage({ initialMenuItems, lang }: ClientPageProps) 
   console.log('[ClientPage] Available categories:', categories);
 
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <main className="min-h-screen relative overflow-hidden bg-[#090A0F]">
+      {/* Particle animation background */}
+      <ParticleBackground category={selectedCategory} />
+      
       <Toaster position="top-center" />
-      <div className="fixed top-16 left-0 right-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+      <div className="fixed top-16 left-0 right-0 z-40 bg-transparent backdrop-blur-sm">
         <CategoryBar
           categories={categories}
           selectedCategory={selectedCategory}
@@ -51,7 +67,7 @@ export default function ClientPage({ initialMenuItems, lang }: ClientPageProps) 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 relative z-10"
       >
         <AnimatePresence mode="wait">
           {sections.length === 0 ? (

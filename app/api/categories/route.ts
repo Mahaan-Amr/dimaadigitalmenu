@@ -6,6 +6,15 @@ import { MenuSection } from '@/app/types/menu';
 const DATA_FILE = path.join(process.cwd(), 'data', 'menu.json');
 const CATEGORY_FILE = path.join(process.cwd(), 'data', 'categories.json');
 
+// Interface for the category with bilingual names
+interface Category {
+  id: string;
+  name: {
+    en: string;
+    fa: string;
+  };
+}
+
 // Ensure data directory exists
 async function ensureDataDir() {
   const dir = path.join(process.cwd(), 'data');
@@ -30,16 +39,25 @@ async function initializeCategoriesData() {
     await ensureDataDir();
     
     // Get the existing categories from menu.json
-    let categories = ['breakfast', 'hot-coffee', 'cold-coffee'];
+    let categoryIds = ['breakfast', 'hot-coffee', 'cold-coffee'];
     try {
       const menuData = await fs.readFile(DATA_FILE, 'utf-8');
       const parsedMenu = JSON.parse(menuData);
       if (parsedMenu.sections && Array.isArray(parsedMenu.sections)) {
-        categories = parsedMenu.sections.map((section: { category: string }) => section.category);
+        categoryIds = parsedMenu.sections.map((section: { category: string }) => section.category);
       }
     } catch (err) {
       console.error('[Categories API] Error reading menu data:', err);
     }
+    
+    // Convert simple categories to bilingual format with default translations
+    const categories: Category[] = categoryIds.map(id => ({
+      id,
+      name: {
+        en: id.charAt(0).toUpperCase() + id.slice(1).replace(/-/g, ' '),
+        fa: convertToFarsi(id)
+      }
+    }));
     
     // Create default categories file with ordered categories
     const initialData = {
@@ -61,6 +79,24 @@ async function initializeCategoriesData() {
     await fs.writeFile(CATEGORY_FILE, JSON.stringify(initialData, null, 2));
     console.log('[Categories API] Created categories file with data:', JSON.stringify(initialData, null, 2));
   }
+}
+
+// Helper function to convert English category names to Farsi placeholders
+function convertToFarsi(categoryId: string): string {
+  const translations: Record<string, string> = {
+    'breakfast': 'صبحانه',
+    'hot-coffee': 'قهوه گرم',
+    'cold-coffee': 'قهوه سرد',
+    'mocktails': 'موکتیل',
+    'smoothies': 'اسموتی',
+    'milkshakes': 'میلک شیک',
+    'hot-drinks': 'نوشیدنی گرم',
+    'cold-brews': 'دم سرد',
+    'herbal-tea': 'دمنوش',
+    'cake-desserts': 'کیک و دسر'
+  };
+
+  return translations[categoryId] || categoryId;
 }
 
 // GET - Fetch all categories
@@ -118,19 +154,23 @@ export async function POST(request: Request) {
       
       // Filter sections to only include ones that are in the categories array
       const existingSections = menu.sections || [];
-      const existingCategories = existingSections.map((section: MenuSection) => section.category);
+      const existingCategoryIds = existingSections.map((section: MenuSection) => section.category);
+      
+      // Get the category IDs from the categories array
+      const categoryIds = categories.map((category: Category) => category.id);
       
       // Add any new categories that don't exist in the menu
-      const sectionsToAdd = categories.filter(category => !existingCategories.includes(category))
-        .map(category => ({ category, items: [] }));
+      const sectionsToAdd = categoryIds
+        .filter(id => !existingCategoryIds.includes(id))
+        .map(id => ({ category: id, items: [] }));
       
       // Combine existing sections with new ones for missing categories
       const updatedSections = [...existingSections, ...sectionsToAdd];
       
       // Sort sections based on the order in categories array
       const sortedSections = updatedSections.sort((a: MenuSection, b: MenuSection) => {
-        const indexA = categories.indexOf(a.category);
-        const indexB = categories.indexOf(b.category);
+        const indexA = categoryIds.indexOf(a.category);
+        const indexB = categoryIds.indexOf(b.category);
         
         // If a category is not in the categories array, put it at the end
         if (indexA === -1) return 1;
@@ -161,12 +201,12 @@ export async function POST(request: Request) {
 export async function DELETE(request: Request) {
   console.log('[Categories API] DELETE request received');
   try {
-    const { category } = await request.json();
-    console.log('[Categories API] Deleting category:', category);
+    const { categoryId } = await request.json();
+    console.log('[Categories API] Deleting category:', categoryId);
 
-    if (!category || typeof category !== 'string') {
+    if (!categoryId || typeof categoryId !== 'string') {
       return NextResponse.json(
-        { error: 'Invalid category format, expected a string' },
+        { error: 'Invalid category format, expected a category ID string' },
         { status: 400 }
       );
     }
@@ -178,7 +218,7 @@ export async function DELETE(request: Request) {
     const categoriesData = JSON.parse(data);
     
     // Check if category is predefined (can't be deleted)
-    if (categoriesData.predefinedCategories.includes(category)) {
+    if (categoriesData.predefinedCategories.includes(categoryId)) {
       return NextResponse.json(
         { error: 'Cannot delete a predefined category' },
         { status: 400 }
@@ -186,7 +226,7 @@ export async function DELETE(request: Request) {
     }
     
     // Remove the category
-    const updatedCategories = categoriesData.categories.filter((cat: string) => cat !== category);
+    const updatedCategories = categoriesData.categories.filter((cat: Category) => cat.id !== categoryId);
     
     // Write updated categories
     const updatedData = {
@@ -203,7 +243,7 @@ export async function DELETE(request: Request) {
       const menu = JSON.parse(menuData);
       
       // Remove the section with the deleted category
-      const updatedSections = (menu.sections || []).filter((section: MenuSection) => section.category !== category);
+      const updatedSections = (menu.sections || []).filter((section: MenuSection) => section.category !== categoryId);
       
       // Write back to file
       await fs.writeFile(DATA_FILE, JSON.stringify({ sections: updatedSections }, null, 2));

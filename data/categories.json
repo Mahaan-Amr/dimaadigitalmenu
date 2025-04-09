@@ -1,26 +1,97 @@
 {
   "categories": [
-    "breakfast",
-    "milkshakes",
-    "mocktails",
-    "smoothies",
-    "hot-coffee",
-    "cold-coffee",
-    "hot-drinks",
-    "herbal-tea",
-    "cold-brews",
-    "cake-desserts"
+    {
+      "id": "coffee-based",
+      "name": {
+        "en": "Coffee-based",
+        "fa": "بر پایه قهوه"
+      }
+    },
+    {
+      "id": "smoothies",
+      "name": {
+        "en": "Smoothie",
+        "fa": "اسموتی"
+      }
+    },
+    {
+      "id": "milkshakes",
+      "name": {
+        "en": "Milkshake",
+        "fa": "میلک شیک"
+      }
+    },
+    {
+      "id": "food-and-salad",
+      "name": {
+        "en": "Food and salad",
+        "fa": "خوراک و سالاد"
+      }
+    },
+    {
+      "id": "panini-and-sandwiches",
+      "name": {
+        "en": "Panini and sandwiches",
+        "fa": "پنینی و ساندویچ"
+      }
+    },
+    {
+      "id": "brewing-bar",
+      "name": {
+        "en": "Brewing Bar",
+        "fa": "دمی بار"
+      }
+    },
+    {
+      "id": "breakfast",
+      "name": {
+        "en": "Breakfast",
+        "fa": "صبحانه"
+      }
+    },
+    {
+      "id": "cake-desserts",
+      "name": {
+        "en": "Cakes and desserts",
+        "fa": "کیک و دسر"
+      }
+    },
+    {
+      "id": "hot-drinks",
+      "name": {
+        "en": "Hot drink",
+        "fa": "نوشیدنی گرم"
+      }
+    },
+    {
+      "id": "herbal-tea",
+      "name": {
+        "en": "Tea and herbal tea",
+        "fa": "چای و دمنوش"
+      }
+    },
+    {
+      "id": "mocktails",
+      "name": {
+        "en": "Mocktails and cold drinks",
+        "fa": "ماکتل و سرد نوش"
+      }
+    }
   ],
   "predefinedCategories": [
-    "breakfast",
+    "smoothies",
     "hot-coffee",
     "cold-coffee",
     "mocktails",
-    "smoothies",
     "milkshakes",
     "hot-drinks",
     "cold-brews",
     "herbal-tea",
-    "cake-desserts"
+    "cake-desserts",
+    "breakfast",
+    "food-and-salad",
+    "panini-and-sandwiches",
+    "brewing-bar",
+    "coffee-based"
   ]
 }

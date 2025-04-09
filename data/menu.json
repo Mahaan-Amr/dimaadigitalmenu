@@ -1,307 +1,607 @@
 {
   "sections": [
     {
-      "category": "breakfast",
+      "category": "coffee-based",
       "items": [
         {
-          "id": "1",
-          "category": "breakfast",
+          "id": "single-espresso",
+          "category": "coffee-based",
           "name": {
-            "en": "Iranian Omelet",
-            "fa": "املت ایرانی"
+            "en": "Single espresso (Blend / Arabica)",
+            "fa": "اسپرسو سینگل (بلند / عربیکا)"
           },
           "description": {
-            "en": "Traditional Iranian style omelet with fresh herbs and spices",
-            "fa": "املت سنتی ایرانی با سبزیجات معطر و ادویه‌جات"
+            "en": "Classic single shot espresso",
+            "fa": "یک شات اسپرسو کلاسیک"
           },
           "ingredients": {
             "en": [
-              "Eggs",
-              "Fresh Herbs",
-              "Spices",
-              "Tomatoes"
+              "Coffee beans"
             ],
             "fa": [
-              "تخم مرغ",
-              "سبزیجات تازه",
-              "ادویه جات",
-              "گوجه فرنگی"
+              "دانه قهوه"
             ]
           },
-          "calories": 320,
+          "calories": 5,
           "price": {
-            "en": 120000,
-            "fa": 78000
-          },
-          "image": "/uploads/1744214439989-381094999-AlbedoBaseXLaminimallogodesignforacompanywhichworks3.jpg",
-          "isAvailable": true
-        },
-        {
-          "id": "2",
-          "category": "breakfast",
-          "name": {
-            "en": "Iranian Beshghab",
-            "fa": "بشقاب ایرانی"
-          },
-          "description": {
-            "en": "Combination of cheese, walnuts, cucumber, tomato, and herbs",
-            "fa": "ترکیبی از پنیر، گردو، خیار، گوجه، سبزی"
-          },
-          "ingredients": {
-            "en": [
-              "Cheese",
-              "Walnuts",
-              "Cucumber",
-              "Tomato",
-              "Fresh Herbs"
-            ],
-            "fa": [
-              "پنیر",
-              "گردو",
-              "خیار",
-              "گوجه",
-              "سبزی"
-            ]
-          },
-          "calories": 450,
-          "price": {
-            "en": 180000,
-            "fa": 110000
+            "blend": {
+              "en": "70000",
+              "fa": "45000"
+            },
+            "arabica": {
+              "en": "90000",
+              "fa": "60000"
+            },
+            "en": "70000 / 90000",
+            "fa": "45000 / 60000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "3",
-          "category": "breakfast",
+          "id": "double-espresso",
+          "category": "coffee-based",
           "name": {
-            "en": "Dimaa Omelet",
-            "fa": "املت دیما"
+            "en": "Double espresso (Blend / Arabica)",
+            "fa": "اسپرسو دبل (بلند / عربیکا)"
           },
           "description": {
-            "en": "Special omelet with sausage, mushroom, caviar dip, and french toast",
-            "fa": "املت ویژه با سوسیس، قارچ، دیپ خاویار، فرنچ تست"
+            "en": "Strong double shot espresso",
+            "fa": "دو شات اسپرسو قوی"
           },
           "ingredients": {
             "en": [
-              "Eggs",
-              "Sausage",
-              "Mushrooms",
-              "Caviar Dip",
-              "French Toast"
+              "Coffee beans"
             ],
             "fa": [
-              "تخم مرغ",
-              "سوسیس",
-              "قارچ",
-              "دیپ خاویار",
-              "فرنچ تست"
+              "دانه قهوه"
             ]
           },
-          "calories": 580,
+          "calories": 10,
           "price": {
-            "en": 210000,
-            "fa": 168000
+            "blend": {
+              "en": "120000",
+              "fa": "60000"
+            },
+            "arabica": {
+              "en": "150000",
+              "fa": "90000"
+            },
+            "fa": "65000 / 90000",
+            "en": "120000 / 150000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "4",
-          "category": "breakfast",
+          "id": "americano",
+          "category": "coffee-based",
           "name": {
-            "en": "French Omelet",
-            "fa": "املت فرانسوی"
+            "en": "Americano / Ice Americano (Blend / Arabica)",
+            "fa": "آمریکانو / آیس آمریکانو (بلند / عربیکا)"
           },
           "description": {
-            "en": "French-style omelet with mushrooms, cheese, bacon, and french toast",
-            "fa": "املت به سبک فرانسوی با قارچ، پنیر چیپوری، بیکن، بولقمون، فرنچ تست"
+            "en": "Espresso with hot water, available hot or iced",
+            "fa": "اسپرسو با آب داغ، موجود به صورت داغ یا سرد"
           },
           "ingredients": {
             "en": [
-              "Eggs",
-              "Mushrooms",
-              "Cheese",
-              "Bacon",
-              "French Toast"
+              "Espresso",
+              "Hot water",
+              "Ice (for iced version)"
             ],
             "fa": [
-              "تخم مرغ",
-              "قارچ",
-              "پنیر چیپوری",
-              "بیکن",
-              "فرنچ تست"
+              "اسپرسو",
+              "آب داغ",
+              "یخ (برای نسخه سرد)"
             ]
           },
-          "calories": 520,
+          "calories": 15,
           "price": {
-            "en": 190000,
-            "fa": 152000
+            "blend": {
+              "en": "125000",
+              "fa": "65000"
+            },
+            "arabica": {
+              "en": "155000",
+              "fa": "95000"
+            },
+            "en": "125000 / 155000",
+            "fa": "65000 / 95000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "5",
-          "category": "breakfast",
+          "id": "latte",
+          "category": "coffee-based",
           "name": {
-            "en": "Egg Sausage",
-            "fa": "سوسیس تخم مرغ"
+            "en": "Latte / Iced Latte (Blend / Arabica)",
+            "fa": "لاته / آیس لاته (بلند / عربیکا)"
           },
           "description": {
-            "en": "Fried eggs with sausage",
-            "fa": "تخم مرغ سرخ شده با سوسیس"
+            "en": "Espresso with steamed milk and light foam, available hot or iced",
+            "fa": "اسپرسو با شیر بخارپز و فوم سبک، موجود به صورت داغ یا سرد"
           },
           "ingredients": {
             "en": [
-              "Eggs",
-              "Sausage"
+              "Espresso",
+              "Milk",
+              "Foam",
+              "Ice (for iced version)"
             ],
             "fa": [
-              "تخم مرغ",
-              "سوسیس"
+              "اسپرسو",
+              "شیر",
+              "فوم",
+              "یخ (برای نسخه سرد)"
             ]
           },
-          "calories": 380,
+          "calories": 120,
           "price": {
-            "en": 140000,
-            "fa": 86000
+            "blend": {
+              "en": "160000",
+              "fa": "85000"
+            },
+            "arabica": {
+              "en": "180000",
+              "fa": "115000"
+            },
+            "fa": "85000 / 115000",
+            "en": "160000 / 180000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "6",
-          "category": "breakfast",
+          "id": "cappuccino",
+          "category": "coffee-based",
           "name": {
-            "en": "English Breakfast",
-            "fa": "بشقاب انگلیسی"
+            "en": "Cappuccino (Blend / Arabica)",
+            "fa": "کاپوچینو (بلند / عربیکا)"
           },
           "description": {
-            "en": "Complete English breakfast with eggs, sausage, frankfurter, bacon, mushrooms, beans",
-            "fa": "صبحانه کامل انگلیسی با تخم مرغ، سوسیس، فرانکفورتر، بیکن گوشت، سیب زمینی، لوبیا، نان تست"
+            "en": "Espresso with equal parts steamed milk and foam",
+            "fa": "اسپرسو با نسبت مساوی شیر بخارپز و فوم"
           },
           "ingredients": {
             "en": [
-              "Eggs",
-              "Sausage",
-              "Frankfurter",
-              "Bacon",
-              "Mushrooms",
-              "Beans",
-              "Toast"
+              "Espresso",
+              "Milk",
+              "Foam"
             ],
             "fa": [
-              "تخم مرغ",
-              "سوسیس",
-              "فرانکفورتر",
-              "بیکن گوشت",
-              "قارچ",
-              "لوبیا",
-              "نان تست"
+              "اسپرسو",
+              "شیر",
+              "فوم"
             ]
           },
-          "calories": 850,
+          "calories": 120,
           "price": {
-            "en": 320000,
-            "fa": 278000
+            "blend": {
+              "en": "150000",
+              "fa": "75000"
+            },
+            "arabica": {
+              "en": "170000",
+              "fa": "105000"
+            },
+            "en": "150000 / 170000",
+            "fa": "75000 / 105000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "7",
-          "category": "breakfast",
+          "id": "moka",
+          "category": "coffee-based",
           "name": {
-            "en": "Side-Up Eggs",
-            "fa": "نیمرو"
+            "en": "Moka / Iced Moka (Blend / Arabica)",
+            "fa": "موکا / آیس موکا (بلند / عربیکا)"
           },
           "description": {
-            "en": "Traditional Iranian fried eggs",
-            "fa": "نیمروی سنتی ایرانی"
+            "en": "Espresso with chocolate and steamed milk, available hot or iced",
+            "fa": "اسپرسو با شکلات و شیر بخارپز، موجود به صورت داغ یا سرد"
           },
           "ingredients": {
             "en": [
-              "Eggs",
-              "Salt",
-              "Pepper"
+              "Espresso",
+              "Chocolate",
+              "Milk",
+              "Foam",
+              "Ice (for iced version)"
             ],
             "fa": [
-              "تخم مرغ",
-              "نمک",
-              "فلفل"
+              "اسپرسو",
+              "شکلات",
+              "شیر",
+              "فوم",
+              "یخ (برای نسخه سرد)"
             ]
           },
-          "calories": 240,
+          "calories": 200,
           "price": {
-            "en": 100000,
-            "fa": 65000
+            "blend": {
+              "en": "200000",
+              "fa": "95000"
+            },
+            "arabica": {
+              "en": "230000",
+              "fa": "135000"
+            },
+            "fa": "95000 / 135000",
+            "en": "200000 / 230000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "8",
-          "category": "breakfast",
+          "id": "cortado",
+          "category": "coffee-based",
           "name": {
-            "en": "Nargesi",
-            "fa": "نرگسی"
+            "en": "Cortado (Blend / Arabica)",
+            "fa": "کورتادو (بلند / عربیکا)"
           },
           "description": {
-            "en": "Fried eggs with fresh spinach",
-            "fa": "نیمرو با اسفناج تازه"
+            "en": "Equal parts espresso and steamed milk",
+            "fa": "نسبت مساوی اسپرسو و شیر بخارپز"
           },
           "ingredients": {
             "en": [
-              "Eggs",
-              "Spinach",
-              "Salt",
-              "Pepper"
+              "Espresso",
+              "Milk"
             ],
             "fa": [
-              "تخم مرغ",
-              "اسفناج",
-              "نمک",
-              "فلفل"
+              "اسپرسو",
+              "شیر"
             ]
           },
-          "calories": 260,
+          "calories": 70,
           "price": {
-            "en": 130000,
-            "fa": 88000
+            "blend": {
+              "en": "130000",
+              "fa": "65000"
+            },
+            "arabica": {
+              "en": "150000",
+              "fa": "100000"
+            },
+            "en": "130000 / 150000",
+            "fa": "65000 / 100000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "9",
-          "category": "breakfast",
+          "id": "coco-latte",
+          "category": "coffee-based",
           "name": {
-            "en": "Meat Omelet",
-            "fa": "املت گوشت"
+            "en": "Coco Latte / Ice Coco (Blend / Arabica)",
+            "fa": "کوکولاته / آیس کوکو (بلند / عربیکا)"
           },
           "description": {
-            "en": "Omelet with minced meat",
-            "fa": "املت با گوشت چرخ کرده"
+            "en": "Coconut flavored latte, available hot or iced",
+            "fa": "لاته با طعم نارگیل، موجود به صورت داغ یا سرد"
           },
           "ingredients": {
             "en": [
-              "Eggs",
-              "Minced Meat",
-              "Onions",
-              "Spices"
+              "Espresso",
+              "Milk",
+              "Coconut syrup",
+              "Ice (for iced version)"
             ],
             "fa": [
-              "تخم مرغ",
-              "گوشت چرخ کرده",
-              "پیاز",
-              "ادویه جات"
+              "اسپرسو",
+              "شیر",
+              "شربت نارگیل",
+              "یخ (برای نسخه سرد)"
             ]
           },
-          "calories": 420,
+          "calories": 180,
           "price": {
-            "en": 180000,
-            "fa": 123000
+            "blend": {
+              "en": "180000",
+              "fa": "102000"
+            },
+            "arabica": {
+              "en": "220000",
+              "fa": "118000"
+            },
+            "fa": "102000 / 118000",
+            "en": "180000 / 220000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "hot-heaven",
+          "category": "coffee-based",
+          "name": {
+            "en": "Hot Heaven (Blend / Arabica)",
+            "fa": "هات هون (بلند / عربیکا)"
+          },
+          "description": {
+            "en": "Special coffee drink with caramel and vanilla",
+            "fa": "نوشیدنی قهوه مخصوص با کارامل و وانیل"
+          },
+          "ingredients": {
+            "en": [
+              "Espresso",
+              "Milk",
+              "Caramel",
+              "Vanilla"
+            ],
+            "fa": [
+              "اسپرسو",
+              "شیر",
+              "کارامل",
+              "وانیل"
+            ]
+          },
+          "calories": 190,
+          "price": {
+            "blend": {
+              "en": "160000",
+              "fa": "98000"
+            },
+            "arabica": {
+              "en": "180000",
+              "fa": "105000"
+            },
+            "en": "160000 / 180000",
+            "fa": "98000 / 105000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "affogato",
+          "category": "coffee-based",
+          "name": {
+            "en": "Affogato (Blend / Arabica)",
+            "fa": "آفوگاتو (بلند / عربیکا)"
+          },
+          "description": {
+            "en": "Shot of espresso poured over vanilla ice cream",
+            "fa": "یک شات اسپرسو ریخته شده روی بستنی وانیلی"
+          },
+          "ingredients": {
+            "en": [
+              "Espresso",
+              "Vanilla ice cream"
+            ],
+            "fa": [
+              "اسپرسو",
+              "بستنی وانیلی"
+            ]
+          },
+          "calories": 160,
+          "price": {
+            "blend": {
+              "en": "180000",
+              "fa": "95000"
+            },
+            "arabica": {
+              "en": "210000",
+              "fa": "130000"
+            },
+            "fa": "95000 / 130000",
+            "en": "180000 / 210000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "coffee-mocktail",
+          "category": "coffee-based",
+          "name": {
+            "en": "Coffee mocktail (Blend / Arabica)",
+            "fa": "ماکتل قهوه (بلند / عربیکا)"
+          },
+          "description": {
+            "en": "Non-alcoholic coffee cocktail with flavored syrups",
+            "fa": "کوکتل قهوه بدون الکل با شربت‌های طعم‌دار"
+          },
+          "ingredients": {
+            "en": [
+              "Espresso",
+              "Flavored syrups",
+              "Milk",
+              "Ice"
+            ],
+            "fa": [
+              "اسپرسو",
+              "شربت‌های طعم‌دار",
+              "شیر",
+              "یخ"
+            ]
+          },
+          "calories": 180,
+          "price": {
+            "blend": {
+              "en": "180000",
+              "fa": "110000"
+            },
+            "arabica": {
+              "en": "210000",
+              "fa": "135000"
+            },
+            "en": "180000 / 210000",
+            "fa": "110000 / 135000"
+          },
+          "image": "",
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "category": "smoothies",
+      "items": [
+        {
+          "id": "tropical-mango",
+          "category": "smoothies",
+          "name": {
+            "en": "Tropical (Mango based)",
+            "fa": "استوایی (بر پایه انبه)"
+          },
+          "description": {
+            "en": "Refreshing mango based smoothie",
+            "fa": "اسموتی خنک بر پایه انبه"
+          },
+          "ingredients": {
+            "en": [
+              "Mango",
+              "Yogurt",
+              "Milk",
+              "Ice"
+            ],
+            "fa": [
+              "انبه",
+              "ماست",
+              "شیر",
+              "یخ"
+            ]
+          },
+          "calories": 220,
+          "price": {
+            "en": "210000",
+            "fa": "148000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "alaska-berry",
+          "category": "smoothies",
+          "name": {
+            "en": "Alaska Berry (Based on blackberry)",
+            "fa": "آلاسکا بری (بر پایه شاه توت)"
+          },
+          "description": {
+            "en": "Rich blackberry based smoothie",
+            "fa": "اسموتی غنی بر پایه شاه توت"
+          },
+          "ingredients": {
+            "en": [
+              "Blackberry",
+              "Yogurt",
+              "Milk",
+              "Ice"
+            ],
+            "fa": [
+              "شاه توت",
+              "ماست",
+              "شیر",
+              "یخ"
+            ]
+          },
+          "calories": 200,
+          "price": {
+            "en": "210000",
+            "fa": "148000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "caramel-apple",
+          "category": "smoothies",
+          "name": {
+            "en": "Caramel apple",
+            "fa": "سیب کارامل"
+          },
+          "description": {
+            "en": "Sweet caramel apple smoothie",
+            "fa": "اسموتی شیرین سیب با کارامل"
+          },
+          "ingredients": {
+            "en": [
+              "Apple",
+              "Caramel",
+              "Yogurt",
+              "Milk",
+              "Ice"
+            ],
+            "fa": [
+              "سیب",
+              "کارامل",
+              "ماست",
+              "شیر",
+              "یخ"
+            ]
+          },
+          "calories": 250,
+          "price": {
+            "en": "210000",
+            "fa": "148000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "diet",
+          "category": "smoothies",
+          "name": {
+            "en": "Diet",
+            "fa": "رژیمی"
+          },
+          "description": {
+            "en": "Low-calorie diet smoothie",
+            "fa": "اسموتی رژیمی کم کالری"
+          },
+          "ingredients": {
+            "en": [
+              "Low-fat Yogurt",
+              "Berries",
+              "Stevia",
+              "Ice"
+            ],
+            "fa": [
+              "ماست کم چرب",
+              "توت ها",
+              "استویا",
+              "یخ"
+            ]
+          },
+          "calories": 120,
+          "price": {
+            "en": "210000",
+            "fa": "148000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "honey-mango",
+          "category": "smoothies",
+          "name": {
+            "en": "Honey Mango",
+            "fa": "هانی مانگو"
+          },
+          "description": {
+            "en": "Honey sweetened mango smoothie",
+            "fa": "اسموتی انبه با شیرینی عسل"
+          },
+          "ingredients": {
+            "en": [
+              "Mango",
+              "Honey",
+              "Yogurt",
+              "Milk",
+              "Ice"
+            ],
+            "fa": [
+              "انبه",
+              "عسل",
+              "ماست",
+              "شیر",
+              "یخ"
+            ]
+          },
+          "calories": 230,
+          "price": {
+            "en": "210000",
+            "fa": "148000"
           },
           "image": "",
           "isAvailable": true
@@ -312,79 +612,79 @@
       "category": "milkshakes",
       "items": [
         {
-          "id": "m1",
+          "id": "dimaa-lotus-nutella",
           "category": "milkshakes",
           "name": {
-            "en": "Dimaa ( Lotus and Nutella )",
+            "en": "Dimaa (Lotus and Nutella)",
             "fa": "دیما (لوتوس و نوتلا)"
           },
           "description": {
-            "en": "Rich milkshake with Lotus biscuits and Nutella",
-            "fa": "میلک شیک غنی با بیسکویت لوتوس و نوتلا"
+            "en": "Special milkshake with Lotus cookies and Nutella",
+            "fa": "میلک شیک مخصوص با بیسکوییت لوتوس و نوتلا"
           },
           "ingredients": {
             "en": [
               "Milk",
               "Ice Cream",
-              "Lotus Biscuits",
+              "Lotus Cookies",
               "Nutella"
             ],
             "fa": [
               "شیر",
               "بستنی",
-              "بیسکویت لوتوس",
+              "بیسکوییت لوتوس",
               "نوتلا"
             ]
           },
-          "calories": 580,
+          "calories": 380,
           "price": {
-            "en": 250000,
-            "fa": 180000
+            "en": "280000",
+            "fa": "180000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "m2",
+          "id": "lotus",
           "category": "milkshakes",
           "name": {
-            "en": "Chocolate",
-            "fa": "شکلات"
+            "en": "Lotus",
+            "fa": "لوتوس"
           },
           "description": {
-            "en": "Classic chocolate milkshake",
-            "fa": "میلک شیک کلاسیک شکلاتی"
+            "en": "Creamy milkshake with lotus cookies",
+            "fa": "میلک شیک خامه ای با بیسکوییت لوتوس"
           },
           "ingredients": {
             "en": [
               "Milk",
               "Ice Cream",
-              "Chocolate Syrup"
+              "Lotus Cookies"
             ],
             "fa": [
               "شیر",
               "بستنی",
-              "شربت شکلات"
+              "بیسکوییت لوتوس"
             ]
           },
-          "calories": 450,
+          "calories": 320,
           "price": {
-            "en": 160000,
-            "fa": 125000
+            "en": "200000",
+            "fa": "145000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "m3",
+          "id": "peanut-butter",
           "category": "milkshakes",
           "name": {
-            "en": "Peanut Butter",
+            "en": "Peanut butter",
             "fa": "بادام زمینی"
           },
           "description": {
-            "en": "Creamy milkshake with peanut butter",
-            "fa": "میلک شیک خامه ای با کره بادام زمینی"
+            "en": "Rich peanut butter milkshake",
+            "fa": "میلک شیک غنی با کره بادام زمینی"
           },
           "ingredients": {
             "en": [
@@ -398,16 +698,16 @@
               "کره بادام زمینی"
             ]
           },
-          "calories": 520,
+          "calories": 350,
           "price": {
-            "en": 192000,
-            "fa": 135000
+            "en": "200000",
+            "fa": "135000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "m4",
+          "id": "espresso",
           "category": "milkshakes",
           "name": {
             "en": "Espresso",
@@ -429,43 +729,675 @@
               "اسپرسو"
             ]
           },
-          "calories": 380,
+          "calories": 280,
           "price": {
-            "en": 198000,
-            "fa": 145000
+            "en": "250000",
+            "fa": "145000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "m5",
+          "id": "fruity",
           "category": "milkshakes",
           "name": {
             "en": "Fruity",
-            "fa": "میوه‌ای"
+            "fa": "میوه ای"
           },
           "description": {
-            "en": "Fresh mixed berries milkshake",
-            "fa": "میلک شیک با میوه‌های تازه مخلوط"
+            "en": "Fresh fruit milkshake",
+            "fa": "میلک شیک با میوه های تازه"
           },
           "ingredients": {
             "en": [
               "Milk",
               "Ice Cream",
-              "Mixed Berries",
-              "Berry Syrup"
+              "Fresh Fruits"
             ],
             "fa": [
               "شیر",
               "بستنی",
-              "مخلوط توت‌ها",
-              "شربت توت"
+              "میوه های تازه"
+            ]
+          },
+          "calories": 260,
+          "price": {
+            "en": "220000",
+            "fa": "155000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "nutella",
+          "category": "milkshakes",
+          "name": {
+            "en": "Nutella",
+            "fa": "نوتلا"
+          },
+          "description": {
+            "en": "Chocolate hazelnut milkshake with Nutella",
+            "fa": "میلک شیک شکلات فندقی با نوتلا"
+          },
+          "ingredients": {
+            "en": [
+              "Milk",
+              "Ice Cream",
+              "Nutella"
+            ],
+            "fa": [
+              "شیر",
+              "بستنی",
+              "نوتلا"
+            ]
+          },
+          "calories": 340,
+          "price": {
+            "en": "210000",
+            "fa": "145000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "masala",
+          "category": "milkshakes",
+          "name": {
+            "en": "Masala",
+            "fa": "ماسالا"
+          },
+          "description": {
+            "en": "Spiced milkshake with masala flavors",
+            "fa": "میلک شیک با طعم ادویه ماسالا"
+          },
+          "ingredients": {
+            "en": [
+              "Milk",
+              "Ice Cream",
+              "Masala Spices"
+            ],
+            "fa": [
+              "شیر",
+              "بستنی",
+              "ادویه ماسالا"
+            ]
+          },
+          "calories": 270,
+          "price": {
+            "en": "190000",
+            "fa": "145000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "chocolate",
+          "category": "milkshakes",
+          "name": {
+            "en": "Chocolate",
+            "fa": "شکلات"
+          },
+          "description": {
+            "en": "Rich chocolate milkshake",
+            "fa": "میلک شیک غنی شکلاتی"
+          },
+          "ingredients": {
+            "en": [
+              "Milk",
+              "Ice Cream",
+              "Chocolate"
+            ],
+            "fa": [
+              "شیر",
+              "بستنی",
+              "شکلات"
+            ]
+          },
+          "calories": 300,
+          "price": {
+            "en": "195000",
+            "fa": "125000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "chocolate-peanut",
+          "category": "milkshakes",
+          "name": {
+            "en": "Chocolate Peanut (Espresso, peanuts, chocolate)",
+            "fa": "پینات چاکلت (اسپرسو، بادام زمینی، شکلات)"
+          },
+          "description": {
+            "en": "Triple flavor milkshake with espresso, peanuts and chocolate",
+            "fa": "میلک شیک سه طعم با اسپرسو، بادام زمینی و شکلات"
+          },
+          "ingredients": {
+            "en": [
+              "Milk",
+              "Ice Cream",
+              "Espresso",
+              "Peanuts",
+              "Chocolate"
+            ],
+            "fa": [
+              "شیر",
+              "بستنی",
+              "اسپرسو",
+              "بادام زمینی",
+              "شکلات"
+            ]
+          },
+          "calories": 360,
+          "price": {
+            "en": "250000",
+            "fa": "180000"
+          },
+          "image": "",
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "category": "food-and-salad",
+      "items": [
+        {
+          "id": "chicken-alfredo-pasta",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Chicken Alfredo Pasta",
+            "fa": "پاستا چیکن آلفردو"
+          },
+          "description": {
+            "en": "Creamy pasta with grilled chicken and alfredo sauce",
+            "fa": "پاستا خامه ای با مرغ گریل شده و سس آلفردو"
+          },
+          "ingredients": {
+            "en": [
+              "Pasta",
+              "Chicken",
+              "Cream",
+              "Parmesan Cheese",
+              "Garlic"
+            ],
+            "fa": [
+              "پاستا",
+              "مرغ",
+              "خامه",
+              "پنیر پارمزان",
+              "سیر"
+            ]
+          },
+          "calories": 650,
+          "price": {
+            "en": "375000",
+            "fa": "248000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "chicken-pesto-pasta",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Chicken Pesto Pasta",
+            "fa": "پاستا چیکن پستو"
+          },
+          "description": {
+            "en": "Pasta with grilled chicken and basil pesto sauce",
+            "fa": "پاستا با مرغ گریل شده و سس پستو ریحان"
+          },
+          "ingredients": {
+            "en": [
+              "Pasta",
+              "Chicken",
+              "Basil Pesto",
+              "Pine Nuts",
+              "Parmesan"
+            ],
+            "fa": [
+              "پاستا",
+              "مرغ",
+              "پستو ریحان",
+              "کاج",
+              "پنیر پارمزان"
+            ]
+          },
+          "calories": 680,
+          "price": {
+            "en": "410000",
+            "fa": "268000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "pesto-rosso-pasta",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Pesto Rosso Pasta",
+            "fa": "پاستا پستو روسو"
+          },
+          "description": {
+            "en": "Pasta with sun-dried tomato pesto sauce",
+            "fa": "پاستا با سس پستو گوجه فرنگی خشک شده"
+          },
+          "ingredients": {
+            "en": [
+              "Pasta",
+              "Sun-dried Tomatoes",
+              "Basil",
+              "Olive Oil",
+              "Garlic"
+            ],
+            "fa": [
+              "پاستا",
+              "گوجه فرنگی خشک شده",
+              "ریحان",
+              "روغن زیتون",
+              "سیر"
+            ]
+          },
+          "calories": 620,
+          "price": {
+            "en": "390000",
+            "fa": "278000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "spaghetti",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Spaghetti",
+            "fa": "اسپاگتی"
+          },
+          "description": {
+            "en": "Classic spaghetti with homemade tomato sauce",
+            "fa": "اسپاگتی کلاسیک با سس گوجه فرنگی خانگی"
+          },
+          "ingredients": {
+            "en": [
+              "Spaghetti",
+              "Tomato Sauce",
+              "Basil",
+              "Parmesan"
+            ],
+            "fa": [
+              "اسپاگتی",
+              "سس گوجه فرنگی",
+              "ریحان",
+              "پنیر پارمزان"
+            ]
+          },
+          "calories": 550,
+          "price": {
+            "en": "450000",
+            "fa": "278000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "caesar-salad",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Caesar salad",
+            "fa": "سالاد سزار"
+          },
+          "description": {
+            "en": "Fresh romaine lettuce with caesar dressing and croutons",
+            "fa": "کاهو رومن تازه با سس سزار و نان سوخاری"
+          },
+          "ingredients": {
+            "en": [
+              "Romaine Lettuce",
+              "Caesar Dressing",
+              "Croutons",
+              "Parmesan"
+            ],
+            "fa": [
+              "کاهو رومن",
+              "سس سزار",
+              "نان سوخاری",
+              "پنیر پارمزان"
+            ]
+          },
+          "calories": 380,
+          "price": {
+            "en": "295000",
+            "fa": "218000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "beef-salad",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Beef salad",
+            "fa": "سالاد بیف"
+          },
+          "description": {
+            "en": "Mixed greens with grilled beef strips and balsamic vinaigrette",
+            "fa": "سبزیجات مخلوط با استریپ گوشت گریل شده و سس بالزامیک"
+          },
+          "ingredients": {
+            "en": [
+              "Mixed Greens",
+              "Beef Strips",
+              "Cherry Tomatoes",
+              "Balsamic Vinaigrette"
+            ],
+            "fa": [
+              "سبزیجات مخلوط",
+              "استریپ گوشت",
+              "گوجه گیلاسی",
+              "سس بالزامیک"
             ]
           },
           "calories": 420,
           "price": {
-            "en": 190000,
-            "fa": 155000
+            "en": "350000",
+            "fa": "285000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "warm-salad",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Warm salad",
+            "fa": "سالاد گرم"
+          },
+          "description": {
+            "en": "Warm vegetable salad with roasted vegetables",
+            "fa": "سالاد گرم سبزیجات با سبزیجات برشته شده"
+          },
+          "ingredients": {
+            "en": [
+              "Roasted Vegetables",
+              "Mixed Greens",
+              "Olive Oil",
+              "Herbs"
+            ],
+            "fa": [
+              "سبزیجات برشته شده",
+              "سبزیجات مخلوط",
+              "روغن زیتون",
+              "سبزیجات معطر"
+            ]
+          },
+          "calories": 310,
+          "price": {
+            "en": "240000",
+            "fa": "178000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "warm-grilled-salad",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Warm Grilled Salad",
+            "fa": "سالاد گرم گریل"
+          },
+          "description": {
+            "en": "Warm salad with grilled vegetables and halloumi cheese",
+            "fa": "سالاد گرم با سبزیجات گریل شده و پنیر هالومی"
+          },
+          "ingredients": {
+            "en": [
+              "Grilled Vegetables",
+              "Halloumi Cheese",
+              "Mixed Greens",
+              "Balsamic Glaze"
+            ],
+            "fa": [
+              "سبزیجات گریل شده",
+              "پنیر هالومی",
+              "سبزیجات مخلوط",
+              "گلیز بالزامیک"
+            ]
+          },
+          "calories": 390,
+          "price": {
+            "en": "360000",
+            "fa": "228000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "chicken-steak",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Chicken steak",
+            "fa": "استیک مرغ"
+          },
+          "description": {
+            "en": "Grilled chicken steak with herbs and special sauce",
+            "fa": "استیک مرغ گریل شده با سبزیجات معطر و سس مخصوص"
+          },
+          "ingredients": {
+            "en": [
+              "Chicken Breast",
+              "Herbs",
+              "Special Sauce",
+              "Side Vegetables"
+            ],
+            "fa": [
+              "سینه مرغ",
+              "سبزیجات معطر",
+              "سس مخصوص",
+              "سبزیجات کناری"
+            ]
+          },
+          "calories": 480,
+          "price": {
+            "en": "450000",
+            "fa": "335000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "french-fries",
+          "category": "food-and-salad",
+          "name": {
+            "en": "French fries",
+            "fa": "سیب زمینی سرخ شده"
+          },
+          "description": {
+            "en": "Crispy golden french fries",
+            "fa": "سیب زمینی سرخ کرده طلایی و ترد"
+          },
+          "ingredients": {
+            "en": [
+              "Potatoes",
+              "Vegetable Oil",
+              "Salt"
+            ],
+            "fa": [
+              "سیب زمینی",
+              "روغن گیاهی",
+              "نمک"
+            ]
+          },
+          "calories": 320,
+          "price": {
+            "en": "145000",
+            "fa": "98000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "potatoes-cheddar-dip",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Potatoes with cheddar dip",
+            "fa": "سیب زمینی با دیپ چدار"
+          },
+          "description": {
+            "en": "Roasted potatoes served with creamy cheddar dip",
+            "fa": "سیب زمینی برشته با دیپ خامه ای چدار"
+          },
+          "ingredients": {
+            "en": [
+              "Potatoes",
+              "Cheddar Cheese",
+              "Cream",
+              "Herbs"
+            ],
+            "fa": [
+              "سیب زمینی",
+              "پنیر چدار",
+              "خامه",
+              "سبزیجات معطر"
+            ]
+          },
+          "calories": 380,
+          "price": {
+            "en": "210000",
+            "fa": "138000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "potatoes-mushroom-cream",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Potatoes with mushroom and cream sauce",
+            "fa": "سیب زمینی با سس قارچ و خامه"
+          },
+          "description": {
+            "en": "Roasted potatoes with rich mushroom cream sauce",
+            "fa": "سیب زمینی برشته با سس غنی قارچ و خامه"
+          },
+          "ingredients": {
+            "en": [
+              "Potatoes",
+              "Mushrooms",
+              "Cream",
+              "Garlic",
+              "Herbs"
+            ],
+            "fa": [
+              "سیب زمینی",
+              "قارچ",
+              "خامه",
+              "سیر",
+              "سبزیجات معطر"
+            ]
+          },
+          "calories": 410,
+          "price": {
+            "en": "220000",
+            "fa": "178000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "potatoes-bacon-dip",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Potatoes with bacon dip",
+            "fa": "سیب زمینی با دیپ بیکن"
+          },
+          "description": {
+            "en": "Crispy potatoes with smoky bacon dip",
+            "fa": "سیب زمینی ترد با دیپ بیکن دودی"
+          },
+          "ingredients": {
+            "en": [
+              "Potatoes",
+              "Bacon",
+              "Sour Cream",
+              "Herbs"
+            ],
+            "fa": [
+              "سیب زمینی",
+              "بیکن",
+              "خامه ترش",
+              "سبزیجات معطر"
+            ]
+          },
+          "calories": 450,
+          "price": {
+            "en": "235000",
+            "fa": "178000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "potatoes-cheddar-sausage",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Potatoes with cheddar dip and Sausage",
+            "fa": "سوسیس سیب زمینی دیپ چدار"
+          },
+          "description": {
+            "en": "Roasted potatoes with sausage and cheddar cheese dip",
+            "fa": "سیب زمینی برشته با سوسیس و دیپ پنیر چدار"
+          },
+          "ingredients": {
+            "en": [
+              "Potatoes",
+              "Sausage",
+              "Cheddar Cheese",
+              "Cream"
+            ],
+            "fa": [
+              "سیب زمینی",
+              "سوسیس",
+              "پنیر چدار",
+              "خامه"
+            ]
+          },
+          "calories": 520,
+          "price": {
+            "en": "245000",
+            "fa": "178000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "kuku-sabzi",
+          "category": "food-and-salad",
+          "name": {
+            "en": "Kuku Sabzi",
+            "fa": "کوکو سبزی"
+          },
+          "description": {
+            "en": "Traditional Persian herb frittata",
+            "fa": "کوکو سبزی سنتی ایرانی"
+          },
+          "ingredients": {
+            "en": [
+              "Fresh Herbs",
+              "Eggs",
+              "Barberries",
+              "Walnuts"
+            ],
+            "fa": [
+              "سبزیجات معطر تازه",
+              "تخم مرغ",
+              "زرشک",
+              "گردو"
+            ]
+          },
+          "calories": 280,
+          "price": {
+            "en": "180000",
+            "fa": "115000"
           },
           "image": "",
           "isAvailable": true
@@ -473,390 +1405,385 @@
       ]
     },
     {
-      "category": "mocktails",
+      "category": "panini-and-sandwiches",
       "items": [
         {
-          "id": "c1",
-          "category": "mocktails",
+          "id": "dimaa-burger",
+          "category": "panini-and-sandwiches",
           "name": {
-            "en": "Seasonal Fruit Juice",
-            "fa": "آب‌میوه فصل"
+            "en": "Dimaa Burger",
+            "fa": "برگر دیما"
           },
           "description": {
-            "en": "Fresh seasonal fruit juice",
-            "fa": "آب‌میوه تازه فصل"
+            "en": "Signature Dimaa burger with special sauce",
+            "fa": "برگر مخصوص دیما با سس ویژه"
           },
           "ingredients": {
             "en": [
-              "Seasonal Fruits",
-              "Ice"
+              "Beef Patty",
+              "Lettuce",
+              "Tomato",
+              "Cheese",
+              "Special Sauce"
             ],
             "fa": [
-              "میوه‌های فصل",
-              "یخ"
+              "پتی گوشت",
+              "کاهو",
+              "گوجه",
+              "پنیر",
+              "سس مخصوص"
             ]
           },
-          "calories": 180,
+          "calories": 550,
           "price": {
-            "en": 120000,
-            "fa": 98000
+            "en": "350000",
+            "fa": "238000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "c2",
-          "category": "mocktails",
+          "id": "double-burger",
+          "category": "panini-and-sandwiches",
           "name": {
-            "en": "Traditional Drinks",
-            "fa": "عرقیجات و شربت‌های سنتی"
+            "en": "Double Burger",
+            "fa": "دبل برگر"
           },
           "description": {
-            "en": "Traditional Iranian herbal drinks",
-            "fa": "نوشیدنی‌های سنتی و عرقیجات ایرانی"
+            "en": "Double beef patty burger with all the fixings",
+            "fa": "برگر با دو پتی گوشت و تمام مخلفات"
           },
           "ingredients": {
             "en": [
-              "Herbal Extracts",
-              "Water",
-              "Ice"
+              "Double Beef Patty",
+              "Lettuce",
+              "Tomato",
+              "Cheese",
+              "Burger Sauce"
             ],
             "fa": [
-              "عرقیجات",
-              "آب",
-              "یخ"
+              "دو پتی گوشت",
+              "کاهو",
+              "گوجه",
+              "پنیر",
+              "سس برگر"
             ]
           },
-          "calories": 100,
+          "calories": 750,
           "price": {
-            "en": 120000,
-            "fa": 88000
+            "en": "480000",
+            "fa": "368000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "c3",
-          "category": "mocktails",
+          "id": "mushroom-cream-burger",
+          "category": "panini-and-sandwiches",
           "name": {
-            "en": "Cucumber Mint",
-            "fa": "خیار سنگجین"
+            "en": "Mushroom and cream Burger",
+            "fa": "برگر قارچ و خامه"
           },
           "description": {
-            "en": "Fresh cucumber and mint drink",
-            "fa": "نوشیدنی خنک خیار و نعناع"
+            "en": "Beef burger with sautéed mushrooms and cream sauce",
+            "fa": "برگر گوشت با قارچ تفت داده شده و سس خامه"
           },
           "ingredients": {
             "en": [
-              "Cucumber",
-              "Mint",
-              "Lime",
-              "Ice"
+              "Beef Patty",
+              "Mushrooms",
+              "Cream Sauce",
+              "Lettuce",
+              "Cheese"
             ],
             "fa": [
-              "خیار",
-              "نعناع",
-              "لیمو",
-              "یخ"
+              "پتی گوشت",
+              "قارچ",
+              "سس خامه",
+              "کاهو",
+              "پنیر"
             ]
           },
-          "calories": 80,
+          "calories": 620,
           "price": {
-            "en": 150000,
-            "fa": 82000
+            "en": "410000",
+            "fa": "278000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "c4",
-          "category": "mocktails",
+          "id": "jalapeno-pesto-burger",
+          "category": "panini-and-sandwiches",
           "name": {
-            "en": "Aloe Vera",
-            "fa": "خاکشیر آلوئه‌ورا"
+            "en": "Jalapeno Pesto Burger",
+            "fa": "برگر هالوپینو پستو"
           },
           "description": {
-            "en": "Refreshing aloe vera drink",
-            "fa": "نوشیدنی خنک و سلامت آلوئه‌ورا"
+            "en": "Spicy burger with jalapenos and pesto sauce",
+            "fa": "برگر تند با هالوپینو و سس پستو"
           },
           "ingredients": {
             "en": [
-              "Aloe Vera",
-              "Chia Seeds",
-              "Lime",
-              "Ice"
+              "Beef Patty",
+              "Jalapenos",
+              "Pesto Sauce",
+              "Lettuce",
+              "Cheese"
             ],
             "fa": [
-              "آلوئه‌ورا",
-              "خاکشیر",
-              "لیمو",
-              "یخ"
+              "پتی گوشت",
+              "هالوپینو",
+              "سس پستو",
+              "کاهو",
+              "پنیر"
             ]
           },
-          "calories": 90,
+          "calories": 580,
           "price": {
-            "en": 150000,
-            "fa": 82000
+            "en": "400000",
+            "fa": "288000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "c5",
-          "category": "mocktails",
+          "id": "cheese-mushroom-burger",
+          "category": "panini-and-sandwiches",
           "name": {
-            "en": "Classic Lemonade",
-            "fa": "لیموناد (ساده)"
+            "en": "Cheese Mushroom Burger",
+            "fa": "چیز ماشروم برگر"
           },
           "description": {
-            "en": "Fresh lemonade with optional flavors",
-            "fa": "لیموناد تازه ساده یا طعم‌دار"
+            "en": "Burger with extra cheese and sautéed mushrooms",
+            "fa": "برگر با پنیر اضافه و قارچ تفت داده شده"
           },
           "ingredients": {
             "en": [
-              "Lemon",
-              "Sugar",
-              "Water",
-              "Ice"
+              "Beef Patty",
+              "Extra Cheese",
+              "Mushrooms",
+              "Lettuce",
+              "Special Sauce"
             ],
             "fa": [
-              "لیمو",
-              "شکر",
-              "آب",
-              "یخ"
+              "پتی گوشت",
+              "پنیر اضافه",
+              "قارچ",
+              "کاهو",
+              "سس مخصوص"
             ]
           },
-          "calories": 120,
+          "calories": 650,
           "price": {
-            "en": 150000,
-            "fa": 88000
+            "en": "430000",
+            "fa": "258000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "c6",
-          "category": "mocktails",
+          "id": "american-hot-dog",
+          "category": "panini-and-sandwiches",
           "name": {
-            "en": "Mojito",
-            "fa": "موهیتو (ساده/طعم‌دار)"
+            "en": "American hot dog",
+            "fa": "آمریکن هات داگ"
           },
           "description": {
-            "en": "Classic or flavored mojito",
-            "fa": "موهیتو کلاسیک یا طعم‌دار"
+            "en": "Classic American-style hot dog with toppings",
+            "fa": "هات داگ کلاسیک به سبک آمریکایی با مخلفات"
           },
           "ingredients": {
             "en": [
-              "Lime",
-              "Mint",
-              "Sugar",
-              "Soda",
-              "Ice"
+              "Beef Sausage",
+              "Hot Dog Bun",
+              "Ketchup",
+              "Mustard",
+              "Pickle Relish"
             ],
             "fa": [
-              "لیمو",
-              "نعناع",
-              "شکر",
-              "سودا",
-              "یخ"
+              "سوسیس گوشت",
+              "نان هات داگ",
+              "کچاپ",
+              "خردل",
+              "خیارشور"
             ]
           },
-          "calories": 130,
+          "calories": 450,
           "price": {
-            "en": 150000,
-            "fa": 94000
+            "en": "290000",
+            "fa": "218000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "c7",
-          "category": "mocktails",
+          "id": "chicken-alfredo-panini",
+          "category": "panini-and-sandwiches",
           "name": {
-            "en": "Margarita",
-            "fa": "مارگاریتا"
+            "en": "Chicken Alfredo Panini",
+            "fa": "پنینی چیکن آلفردو"
           },
           "description": {
-            "en": "Non-alcoholic margarita",
-            "fa": "مارگاریتا بدون الکل"
+            "en": "Grilled panini with chicken and alfredo sauce",
+            "fa": "پنینی گریل شده با مرغ و سس آلفردو"
           },
           "ingredients": {
             "en": [
-              "Lime Juice",
-              "Orange Juice",
-              "Simple Syrup",
-              "Ice"
+              "Ciabatta Bread",
+              "Grilled Chicken",
+              "Alfredo Sauce",
+              "Cheese",
+              "Spinach"
             ],
             "fa": [
-              "آب لیمو",
-              "آب پرتقال",
-              "شربت ساده",
-              "یخ"
+              "نان چاباتا",
+              "مرغ گریل شده",
+              "سس آلفردو",
+              "پنیر",
+              "اسفناج"
             ]
           },
-          "calories": 110,
+          "calories": 520,
           "price": {
-            "en": 150000,
-            "fa": 98000
+            "en": "375000",
+            "fa": "248000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "c8",
-          "category": "mocktails",
+          "id": "chicken-pesto-panini",
+          "category": "panini-and-sandwiches",
           "name": {
-            "en": "Red Sun",
-            "fa": "رد سان"
+            "en": "Chicken Pesto Panini",
+            "fa": "پنینی چیکن پستو"
           },
           "description": {
-            "en": "Refreshing red drink based on aloe vera",
-            "fa": "نوشیدنی خنک قرمز بر پایه آلوئه‌ورا"
+            "en": "Grilled panini with chicken and pesto sauce",
+            "fa": "پنینی گریل شده با مرغ و سس پستو"
           },
           "ingredients": {
             "en": [
-              "Aloe Vera",
-              "Red Syrup",
-              "Lime",
-              "Ice"
+              "Ciabatta Bread",
+              "Grilled Chicken",
+              "Pesto Sauce",
+              "Mozzarella",
+              "Tomato"
             ],
             "fa": [
-              "آلوئه‌ورا",
-              "شربت قرمز",
-              "لیمو",
-              "یخ"
+              "نان چاباتا",
+              "مرغ گریل شده",
+              "سس پستو",
+              "پنیر موزارلا",
+              "گوجه"
             ]
           },
-          "calories": 140,
+          "calories": 540,
           "price": {
-            "en": 150000,
-            "fa": 118000
+            "en": "410000",
+            "fa": "268000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "c9",
-          "category": "mocktails",
+          "id": "beef-panini",
+          "category": "panini-and-sandwiches",
           "name": {
-            "en": "Blue Ocean",
-            "fa": "بلو اوشن"
+            "en": "Beef Panini",
+            "fa": "پنینی بیف"
           },
           "description": {
-            "en": "Blue mocktail with pina colada base",
-            "fa": "موکتل آبی بر پایه پینا کولادا"
+            "en": "Grilled panini with sliced beef and special sauce",
+            "fa": "پنینی گریل شده با گوشت برش خورده و سس مخصوص"
           },
           "ingredients": {
             "en": [
-              "Pineapple Juice",
-              "Coconut Milk",
-              "Blue Curacao Syrup",
-              "Ice"
+              "Ciabatta Bread",
+              "Sliced Beef",
+              "Caramelized Onions",
+              "Cheese",
+              "Special Sauce"
             ],
             "fa": [
-              "آب آناناس",
-              "شیر نارگیل",
-              "شربت بلوکوراسائو",
-              "یخ"
+              "نان چاباتا",
+              "گوشت برش خورده",
+              "پیاز کاراملی شده",
+              "پنیر",
+              "سس مخصوص"
             ]
           },
-          "calories": 160,
+          "calories": 580,
           "price": {
-            "en": 150000,
-            "fa": 118000
+            "en": "430000",
+            "fa": "298000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "c10",
-          "category": "mocktails",
+          "id": "bacon-chimichurri-panini",
+          "category": "panini-and-sandwiches",
           "name": {
-            "en": "Green Mix",
-            "fa": "گرین میکس"
+            "en": "Bacon Chimichurri Panini",
+            "fa": "پنینی چیمیشوری بیکن"
           },
           "description": {
-            "en": "Green vegetable and fruit mix",
-            "fa": "میکس سبزیجات و میوه‌های سبز"
+            "en": "Panini with turkey bacon, fried egg and chimichurri dip",
+            "fa": "پنینی با بیکن بوقلمون، تخم مرغ و دیپ چیمیشوری"
           },
           "ingredients": {
             "en": [
-              "Green Vegetables",
-              "Green Fruits",
-              "Lime",
-              "Ice"
+              "Ciabatta Bread",
+              "Turkey Bacon",
+              "Fried Egg",
+              "Chimichurri Sauce"
             ],
             "fa": [
-              "سبزیجات",
-              "میوه‌های سبز",
-              "لیمو",
-              "یخ"
+              "نان چاباتا",
+              "بیکن بوقلمون",
+              "تخم مرغ سرخ شده",
+              "سس چیمیشوری"
             ]
           },
-          "calories": 100,
+          "calories": 490,
           "price": {
-            "en": 150000,
-            "fa": 118000
+            "en": "250000",
+            "fa": "180000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "c12",
-          "category": "mocktails",
+          "id": "bacon-pesto-panini",
+          "category": "panini-and-sandwiches",
           "name": {
-            "en": "Ginger Berry",
-            "fa": "جینجر بری"
+            "en": "Bacon Pesto Panini",
+            "fa": "پنینی پستو بیکن"
           },
           "description": {
-            "en": "Berry mix with ginger",
-            "fa": "میکس توت فرنگی با زنجبیل"
+            "en": "Panini with bacon, scrambled egg and pesto sauce",
+            "fa": "پنینی با بیکن، نیمرو و سس پستو"
           },
           "ingredients": {
             "en": [
-              "Mixed Berries",
-              "Ginger",
-              "Lime",
-              "Ice"
+              "Ciabatta Bread",
+              "Bacon",
+              "Scrambled Egg",
+              "Pesto Sauce"
             ],
             "fa": [
-              "توت فرنگی",
-              "زنجبیل",
-              "لیمو",
-              "یخ"
+              "نان چاباتا",
+              "بیکن",
+              "نیمرو",
+              "سس پستو"
             ]
           },
-          "calories": 110,
+          "calories": 510,
           "price": {
-            "en": 165000,
-            "fa": 122000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "c13",
-          "category": "mocktails",
-          "name": {
-            "en": "Bartender's Special",
-            "fa": "پیشنهاد بارتندر"
-          },
-          "description": {
-            "en": "Special drink of the day",
-            "fa": "نوشیدنی ویژه روز"
-          },
-          "ingredients": {
-            "en": [
-              "Daily Special Ingredients"
-            ],
-            "fa": [
-              "مواد ویژه روز"
-            ]
-          },
-          "calories": 150,
-          "price": {
-            "en": 175000,
-            "fa": 138000
+            "en": "270000",
+            "fa": "190000"
           },
           "image": "",
           "isAvailable": true
@@ -864,542 +1791,971 @@
       ]
     },
     {
-      "category": "smoothies",
+      "category": "brewing-bar",
       "items": [
         {
-          "id": "s1",
-          "category": "smoothies",
+          "id": "cold-brew-120",
+          "category": "brewing-bar",
           "name": {
-            "en": "Tropical(Based on mango)",
-            "fa": "اسموتی (ساده/طعم‌دار)"
+            "en": "Cold brew 120 (240) ml",
+            "fa": "کلد برو 120 (240) میل"
           },
           "description": {
-            "en": "Mango based smoothie",
-            "fa": "اسموتی توت فرنگی تازه ساده یا طعم‌دار"
+            "en": "Smooth cold-brewed coffee available in two sizes",
+            "fa": "قهوه سرد دم آرام در دو سایز موجود است"
           },
           "ingredients": {
             "en": [
-              "Strawberries",
-              "Yogurt",
-              "Honey",
-              "Ice"
-            ],
-            "fa": [
-              "توت فرنگی",
-              "ماست",
-              "عسل",
-              "یخ"
-            ]
-          },
-          "calories": 180,
-          "price": {
-            "en": 190000,
-            "fa": 148000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "s2",
-          "category": "smoothies",
-          "name": {
-            "en": "Alaska Berry(Based on blackberry)",
-            "fa": "آلاسکا بری"
-          },
-          "description": {
-            "en": "Blackberry based smoothie",
-            "fa": "اسموتی مخلوط توت‌ها بر پایه پینا کولادا"
-          },
-          "ingredients": {
-            "en": [
-              "Mixed Berries",
-              "Coconut Milk",
-              "Pineapple",
-              "Ice"
-            ],
-            "fa": [
-              "مخلوط توت‌ها",
-              "شیر نارگیل",
-              "آناناس",
-              "یخ"
-            ]
-          },
-          "calories": 220,
-          "price": {
-            "en": 190000,
-            "fa": 148000
-          },
-          "image": "",
-          "isAvailable": true
-        }
-      ]
-    },
-    {
-      "category": "hot-coffee",
-      "items": [
-        {
-          "id": "hc1",
-          "category": "hot-coffee",
-          "name": {
-            "en": "Single espresso",
-            "fa": "اسپرسو سینگل"
-          },
-          "description": {
-            "en": "Classic single shot espresso",
-            "fa": "یک شات اسپرسو کلاسیک"
-          },
-          "ingredients": {
-            "en": [
-              "Coffee Beans",
-              "Hot Water"
+              "Coffee grounds",
+              "Filtered water"
             ],
             "fa": [
               "دانه قهوه",
-              "آب داغ"
+              "آب فیلتر شده"
             ]
           },
-          "calories": 1,
+          "calories": 10,
           "price": {
-            "en": 70000,
-            "fa": 35000
+            "en": "150000",
+            "fa": "95000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "hc2",
-          "category": "hot-coffee",
+          "id": "dimaa-cold-brew",
+          "category": "brewing-bar",
           "name": {
-            "en": "Double espresso",
-            "fa": "اسپرسو دبل"
+            "en": "Dimaa Cold brew",
+            "fa": "کلد برو دیما"
           },
           "description": {
-            "en": "Double shot espresso",
-            "fa": "دو شات اسپرسو"
+            "en": "Signature cold brew with special Dimaa blend",
+            "fa": "کلد برو مخصوص با ترکیب ویژه دیما"
           },
           "ingredients": {
             "en": [
-              "Coffee Beans",
-              "Hot Water"
+              "Specialty coffee blend",
+              "Filtered water"
             ],
             "fa": [
-              "دانه قهوه",
-              "آب داغ"
-            ]
-          },
-          "calories": 2,
-          "price": {
-            "en": 72000,
-            "fa": 45000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "hc3",
-          "category": "hot-coffee",
-          "name": {
-            "en": "Americano",
-            "fa": "آمریکانو"
-          },
-          "description": {
-            "en": "Espresso with hot water",
-            "fa": "اسپرسو با آب داغ"
-          },
-          "ingredients": {
-            "en": [
-              "Espresso",
-              "Hot Water"
-            ],
-            "fa": [
-              "اسپرسو",
-              "آب داغ"
-            ]
-          },
-          "calories": 3,
-          "price": {
-            "en": 75000,
-            "fa": 50000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "hc4",
-          "category": "hot-coffee",
-          "name": {
-            "en": "Latte",
-            "fa": "لاته"
-          },
-          "description": {
-            "en": "Espresso with steamed milk",
-            "fa": "اسپرسو با شیر بخارپز"
-          },
-          "ingredients": {
-            "en": [
-              "Espresso",
-              "Steamed Milk",
-              "Milk Foam"
-            ],
-            "fa": [
-              "اسپرسو",
-              "شیر بخارپز",
-              "فوم شیر"
-            ]
-          },
-          "calories": 120,
-          "price": {
-            "en": 96000,
-            "fa": 82000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "hc5",
-          "category": "hot-coffee",
-          "name": {
-            "en": "Cappuccino",
-            "fa": "کاپوچینو"
-          },
-          "description": {
-            "en": "Espresso with steamed milk and extra foam",
-            "fa": "اسپرسو با شیر بخارپز و فوم اضافه"
-          },
-          "ingredients": {
-            "en": [
-              "Espresso",
-              "Steamed Milk",
-              "Extra Milk Foam"
-            ],
-            "fa": [
-              "اسپرسو",
-              "شیر بخارپز",
-              "فوم شیر اضافه"
-            ]
-          },
-          "calories": 110,
-          "price": {
-            "en": 90000,
-            "fa": 75000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "hc6",
-          "category": "hot-coffee",
-          "name": {
-            "en": "Moka",
-            "fa": "موکا"
-          },
-          "description": {
-            "en": "Espresso with chocolate and steamed milk",
-            "fa": "اسپرسو با شکلات و شیر بخارپز"
-          },
-          "ingredients": {
-            "en": [
-              "Espresso",
-              "Chocolate",
-              "Steamed Milk",
-              "Whipped Cream"
-            ],
-            "fa": [
-              "اسپرسو",
-              "شکلات",
-              "شیر بخارپز",
-              "خامه زده"
-            ]
-          },
-          "calories": 180,
-          "price": {
-            "en": 126000,
-            "fa": 95000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "hc7",
-          "category": "hot-coffee",
-          "name": {
-            "en": "Coco latte",
-            "fa": "کوکولاته"
-          },
-          "description": {
-            "en": "Espresso with coconut and steamed milk",
-            "fa": "اسپرسو با نارگیل و شیر بخارپز"
-          },
-          "ingredients": {
-            "en": [
-              "Espresso",
-              "Coconut",
-              "Steamed Milk",
-              "Whipped Cream"
-            ],
-            "fa": [
-              "اسپرسو",
-              "نارگیل",
-              "شیر بخارپز",
-              "خامه زده"
-            ]
-          },
-          "calories": 190,
-          "price": {
-            "en": 108000,
-            "fa": 85000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "1741623573621",
-          "category": "hot-coffee",
-          "name": {
-            "fa": "",
-            "en": "Single Espressoooooooooo (100 / 60 )"
-          },
-          "description": {
-            "fa": "",
-            "en": "Single Espresso (100 / 60 )"
-          },
-          "ingredients": {
-            "fa": [],
-            "en": []
-          },
-          "calories": 0,
-          "price": {
-            "fa": "",
-            "en": "10000 / 150000"
-          },
-          "image": "",
-          "isAvailable": true,
-          "onlyShowIn": [
-            "en"
-          ]
-        }
-      ]
-    },
-    {
-      "category": "cold-coffee",
-      "items": [
-        {
-          "id": "cc1",
-          "category": "cold-coffee",
-          "name": {
-            "en": "Iced americano",
-            "fa": "آیس آمریکانو"
-          },
-          "description": {
-            "en": "Chilled espresso with cold water",
-            "fa": "اسپرسو سرد با آب سرد"
-          },
-          "ingredients": {
-            "en": [
-              "Espresso",
-              "Cold Water",
-              "Ice"
-            ],
-            "fa": [
-              "اسپرسو",
-              "آب سرد",
-              "یخ"
-            ]
-          },
-          "calories": 5,
-          "price": {
-            "en": 75000,
-            "fa": 50000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "cc2",
-          "category": "cold-coffee",
-          "name": {
-            "en": "Iced americano with soda & lemon",
-            "fa": "آیس آمریکانو سودا لیمو"
-          },
-          "description": {
-            "en": "Iced americano with soda and lemon",
-            "fa": "آیس آمریکانو با سودا و لیمو"
-          },
-          "ingredients": {
-            "en": [
-              "Espresso",
-              "Soda Water",
-              "Lemon",
-              "Ice"
-            ],
-            "fa": [
-              "اسپرسو",
-              "سودا",
-              "لیمو",
-              "یخ"
+              "ترکیب قهوه مخصوص",
+              "آب فیلتر شده"
             ]
           },
           "calories": 15,
           "price": {
-            "en": 105000,
-            "fa": 65000
+            "en": "160000",
+            "fa": "130000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "cc3",
-          "category": "cold-coffee",
+          "id": "v60",
+          "category": "brewing-bar",
           "name": {
-            "en": "Iced latte",
-            "fa": "آیس لاته"
+            "en": "V 60",
+            "fa": "V 60"
           },
           "description": {
-            "en": "Chilled espresso with cold milk",
-            "fa": "اسپرسو سرد با شیر سرد"
+            "en": "Pour-over coffee brewed using V60 method",
+            "fa": "قهوه به روش ریختنی با استفاده از روش وی 60"
           },
           "ingredients": {
             "en": [
-              "Espresso",
-              "Cold Milk",
-              "Ice"
+              "Single origin coffee",
+              "Hot water"
             ],
             "fa": [
-              "اسپرسو",
-              "شیر سرد",
-              "یخ"
+              "قهوه تک خاستگاه",
+              "آب داغ"
             ]
           },
-          "calories": 130,
+          "calories": 5,
           "price": {
-            "en": 96000,
-            "fa": 82000
+            "en": "250000",
+            "fa": "155000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "cc4",
-          "category": "cold-coffee",
+          "id": "greek-coffee",
+          "category": "brewing-bar",
           "name": {
-            "en": "Iced moka",
-            "fa": "آیس موکا"
+            "en": "Greek coffee",
+            "fa": "قهوه یونانی"
           },
           "description": {
-            "en": "Chilled espresso with chocolate and cold milk",
-            "fa": "اسپرسو سرد با شکلات و شیر سرد"
+            "en": "Traditional Greek coffee brewed in a briki",
+            "fa": "قهوه سنتی یونانی دم شده در بریکی"
           },
           "ingredients": {
             "en": [
-              "Espresso",
-              "Chocolate",
-              "Cold Milk",
-              "Ice"
+              "Finely ground coffee",
+              "Water",
+              "Sugar (optional)"
             ],
             "fa": [
-              "اسپرسو",
-              "شکلات",
-              "شیر سرد",
-              "یخ"
+              "قهوه بسیار آسیاب شده",
+              "آب",
+              "شکر (اختیاری)"
             ]
           },
-          "calories": 190,
+          "calories": 30,
           "price": {
-            "en": 126000,
-            "fa": 95000
+            "en": "90000",
+            "fa": "75000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "cc5",
-          "category": "cold-coffee",
+          "id": "turkish-coffee",
+          "category": "brewing-bar",
           "name": {
-            "en": "Iced coco",
-            "fa": "آیس کوکو"
+            "en": "Turkish coffee",
+            "fa": "قهوه ترک"
           },
           "description": {
-            "en": "Chilled coffee with coconut",
-            "fa": "قهوه سرد با نارگیل"
+            "en": "Traditional Turkish coffee with rich flavor and texture",
+            "fa": "قهوه سنتی ترک با طعم و بافت غنی"
           },
           "ingredients": {
             "en": [
-              "Coffee",
-              "Coconut",
-              "Cold Milk",
-              "Ice"
+              "Finely ground coffee",
+              "Water",
+              "Sugar (optional)"
             ],
             "fa": [
-              "قهوه",
-              "نارگیل",
-              "شیر سرد",
-              "یخ"
+              "قهوه بسیار آسیاب شده",
+              "آب",
+              "شکر (اختیاری)"
             ]
           },
-          "calories": 170,
+          "calories": 30,
           "price": {
-            "en": 108000,
-            "fa": 85000
+            "en": "75000",
+            "fa": "60000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "cc6",
-          "category": "cold-coffee",
+          "id": "clever",
+          "category": "brewing-bar",
           "name": {
-            "en": "Affogato",
-            "fa": "آفوگاتو"
+            "en": "Clever",
+            "fa": "کلور"
           },
           "description": {
-            "en": "Espresso poured over ice cream",
-            "fa": "اسپرسو ریخته شده روی بستنی"
+            "en": "Coffee brewed with Clever dripper combining immersion and filter methods",
+            "fa": "قهوه دم شده با دریپر کلور که ترکیبی از روش غوطه‌وری و فیلتر است"
           },
           "ingredients": {
             "en": [
-              "Espresso",
-              "Vanilla Ice Cream"
+              "Medium ground coffee",
+              "Hot water"
             ],
             "fa": [
-              "اسپرسو",
-              "بستنی وانیلی"
+              "قهوه با آسیاب متوسط",
+              "آب داغ"
+            ]
+          },
+          "calories": 5,
+          "price": {
+            "en": "200000",
+            "fa": "147000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "chemex",
+          "category": "brewing-bar",
+          "name": {
+            "en": "Chemex",
+            "fa": "کمکس"
+          },
+          "description": {
+            "en": "Coffee brewed in elegant Chemex for a clean, smooth taste",
+            "fa": "قهوه دم شده در کمکس زیبا برای طعمی تمیز و نرم"
+          },
+          "ingredients": {
+            "en": [
+              "Medium-coarse ground coffee",
+              "Hot water"
+            ],
+            "fa": [
+              "قهوه با آسیاب متوسط درشت",
+              "آب داغ"
+            ]
+          },
+          "calories": 5,
+          "price": {
+            "en": "200000",
+            "fa": "145000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "aeropress",
+          "category": "brewing-bar",
+          "name": {
+            "en": "Aeropress",
+            "fa": "ایروپرس"
+          },
+          "description": {
+            "en": "Rich coffee brewed using pressure from Aeropress method",
+            "fa": "قهوه غنی دم شده با استفاده از فشار به روش ایروپرس"
+          },
+          "ingredients": {
+            "en": [
+              "Medium-fine ground coffee",
+              "Hot water"
+            ],
+            "fa": [
+              "قهوه با آسیاب متوسط ریز",
+              "آب داغ"
+            ]
+          },
+          "calories": 5,
+          "price": {
+            "en": "200000",
+            "fa": "135000"
+          },
+          "image": "",
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "category": "breakfast",
+      "items": [
+        {
+          "id": "iranian-omelette",
+          "category": "breakfast",
+          "name": {
+            "en": "Iranian omelette",
+            "fa": "املت ایرانی"
+          },
+          "description": {
+            "en": "Traditional Iranian omelette with meat",
+            "fa": "املت سنتی ایرانی با گوشت"
+          },
+          "ingredients": {
+            "en": [
+              "Eggs",
+              "Tomatoes",
+              "Meat",
+              "Spices"
+            ],
+            "fa": [
+              "تخم مرغ",
+              "گوجه فرنگی",
+              "گوشت",
+              "ادویه"
+            ]
+          },
+          "calories": 320,
+          "price": {
+            "en": "175000",
+            "fa": "120000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "iranian-plate",
+          "category": "breakfast",
+          "name": {
+            "en": "Iranian plate",
+            "fa": "بشقاب ایرانی"
+          },
+          "description": {
+            "en": "Traditional Iranian breakfast plate",
+            "fa": "بشقاب صبحانه سنتی ایرانی"
+          },
+          "ingredients": {
+            "en": [
+              "Nimro",
+              "Cheese",
+              "Butter",
+              "Honey",
+              "Cucumber",
+              "Tomato",
+              "Vegetables"
+            ],
+            "fa": [
+              "نیمرو",
+              "پنیر",
+              "کره",
+              "عسل",
+              "خیار",
+              "گوجه",
+              "سبزی"
+            ]
+          },
+          "calories": 450,
+          "price": {
+            "en": "200000",
+            "fa": "160000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "dimaas-omelette",
+          "category": "breakfast",
+          "name": {
+            "en": "Dimaa's omelette",
+            "fa": "املت دیما"
+          },
+          "description": {
+            "en": "Special Dimaa omelette with egg roll and caviar dip",
+            "fa": "املت مخصوص دیما با رول تخم مرغ و دیپ خاویار"
+          },
+          "ingredients": {
+            "en": [
+              "Egg roll",
+              "Meat",
+              "Caviar dip",
+              "French toast"
+            ],
+            "fa": [
+              "رول تخم مرغ",
+              "گوشت",
+              "دیپ خاویار",
+              "فرنچ تست"
+            ]
+          },
+          "calories": 520,
+          "price": {
+            "en": "250000",
+            "fa": "168000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "french-omelette",
+          "category": "breakfast",
+          "name": {
+            "en": "French omelette",
+            "fa": "املت فرانسوی"
+          },
+          "description": {
+            "en": "French style omelette with chimichurri cheese",
+            "fa": "املت به سبک فرانسوی با پنیر چیمیچوری"
+          },
+          "ingredients": {
+            "en": [
+              "Nimro roll",
+              "Chimichurri cheese",
+              "Bacon",
+              "Turkey",
+              "French toast"
+            ],
+            "fa": [
+              "رول نیمرو",
+              "پنیر چیمیچوری",
+              "بیکن",
+              "بوقلمون",
+              "فرنچ تست"
+            ]
+          },
+          "calories": 480,
+          "price": {
+            "en": "220000",
+            "fa": "152000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "side-up-egg",
+          "category": "breakfast",
+          "name": {
+            "en": "Side up Egg",
+            "fa": "نیمرو"
+          },
+          "description": {
+            "en": "Classic fried eggs",
+            "fa": "تخم مرغ سرخ شده کلاسیک"
+          },
+          "ingredients": {
+            "en": [
+              "Eggs",
+              "Salt",
+              "Pepper",
+              "Oil"
+            ],
+            "fa": [
+              "تخم مرغ",
+              "نمک",
+              "فلفل",
+              "روغن"
+            ]
+          },
+          "calories": 210,
+          "price": {
+            "en": "110000",
+            "fa": "65000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "egg-sausage",
+          "category": "breakfast",
+          "name": {
+            "en": "Egg sausage",
+            "fa": "سوسیس تخم مرغ"
+          },
+          "description": {
+            "en": "Eggs with sausage and special dip",
+            "fa": "تخم مرغ با سوسیس و دیپ مخصوص"
+          },
+          "ingredients": {
+            "en": [
+              "Eggs",
+              "Sausage",
+              "Special dip",
+              "Spices"
+            ],
+            "fa": [
+              "تخم مرغ",
+              "سوسیس",
+              "دیپ مخصوص",
+              "ادویه"
+            ]
+          },
+          "calories": 380,
+          "price": {
+            "en": "180000",
+            "fa": "106000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "english-plate",
+          "category": "breakfast",
+          "name": {
+            "en": "English plate",
+            "fa": "بشقاب انگلیسی"
+          },
+          "description": {
+            "en": "Full English breakfast with all the fixings",
+            "fa": "صبحانه کامل انگلیسی با تمام مخلفات"
+          },
+          "ingredients": {
+            "en": [
+              "Nimro",
+              "Frankfurter sausage",
+              "Bacon",
+              "Potatoes",
+              "Beans",
+              "Toast"
+            ],
+            "fa": [
+              "نیمرو",
+              "سوسیس فرانکفورتر",
+              "بیکن گوشت",
+              "سیب زمینی",
+              "لوبیا",
+              "نان تست"
+            ]
+          },
+          "calories": 650,
+          "price": {
+            "en": "355000",
+            "fa": "278000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "cheddar-omelette-toast",
+          "category": "breakfast",
+          "name": {
+            "en": "Cheddar omelette toast",
+            "fa": "تست املت چدار"
+          },
+          "description": {
+            "en": "Omelette on toast with cheddar cheese",
+            "fa": "املت روی نان تست با پنیر چدار"
+          },
+          "ingredients": {
+            "en": [
+              "Eggs",
+              "Cheddar cheese",
+              "Toast",
+              "Butter"
+            ],
+            "fa": [
+              "تخم مرغ",
+              "پنیر چدار",
+              "نان تست",
+              "کره"
+            ]
+          },
+          "calories": 350,
+          "price": {
+            "en": "190000",
+            "fa": "108000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "bacon-omelette-toast",
+          "category": "breakfast",
+          "name": {
+            "en": "Bacon omelette toast",
+            "fa": "تست املت بیکن"
+          },
+          "description": {
+            "en": "Omelette on toast with crispy bacon",
+            "fa": "املت روی نان تست با بیکن ترد"
+          },
+          "ingredients": {
+            "en": [
+              "Eggs",
+              "Bacon",
+              "Toast",
+              "Butter"
+            ],
+            "fa": [
+              "تخم مرغ",
+              "بیکن",
+              "نان تست",
+              "کره"
+            ]
+          },
+          "calories": 420,
+          "price": {
+            "en": "220000",
+            "fa": "148000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "pepperoni-omelette-toast",
+          "category": "breakfast",
+          "name": {
+            "en": "Pepperoni omelette toast",
+            "fa": "تست املت پپرونی"
+          },
+          "description": {
+            "en": "Omelette on toast with spicy pepperoni",
+            "fa": "املت روی نان تست با پپرونی تند"
+          },
+          "ingredients": {
+            "en": [
+              "Eggs",
+              "Pepperoni",
+              "Toast",
+              "Cheese"
+            ],
+            "fa": [
+              "تخم مرغ",
+              "پپرونی",
+              "نان تست",
+              "پنیر"
+            ]
+          },
+          "calories": 430,
+          "price": {
+            "en": "220000",
+            "fa": "148000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "peanut-nutella-toast",
+          "category": "breakfast",
+          "name": {
+            "en": "Peanut Nutella toast",
+            "fa": "تست نوتلا بادام زمینی"
+          },
+          "description": {
+            "en": "Toast with peanut butter and Nutella",
+            "fa": "نان تست با کره بادام زمینی و نوتلا"
+          },
+          "ingredients": {
+            "en": [
+              "Toast",
+              "Peanut butter",
+              "Nutella"
+            ],
+            "fa": [
+              "نان تست",
+              "کره بادام زمینی",
+              "نوتلا"
+            ]
+          },
+          "calories": 380,
+          "price": {
+            "en": "210000",
+            "fa": "128000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "pancake",
+          "category": "breakfast",
+          "name": {
+            "en": "Pancake",
+            "fa": "پنکیک"
+          },
+          "description": {
+            "en": "Fluffy pancakes with maple syrup",
+            "fa": "پنکیک نرم با شربت افرا"
+          },
+          "ingredients": {
+            "en": [
+              "Flour",
+              "Eggs",
+              "Milk",
+              "Maple syrup"
+            ],
+            "fa": [
+              "آرد",
+              "تخم مرغ",
+              "شیر",
+              "شربت افرا"
+            ]
+          },
+          "calories": 420,
+          "price": {
+            "en": "250000",
+            "fa": "188000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "nargesi",
+          "category": "breakfast",
+          "name": {
+            "en": "Nargesi",
+            "fa": "نرگسی"
+          },
+          "description": {
+            "en": "Traditional Iranian dish with eggs and spinach",
+            "fa": "غذای سنتی ایرانی با تخم مرغ و اسفناج"
+          },
+          "ingredients": {
+            "en": [
+              "Eggs",
+              "Spinach",
+              "Onions",
+              "Spices"
+            ],
+            "fa": [
+              "تخم مرغ",
+              "اسفناج",
+              "پیاز",
+              "ادویه"
+            ]
+          },
+          "calories": 280,
+          "price": {
+            "en": "150000",
+            "fa": "88000"
+          },
+          "image": "",
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "category": "cake-desserts",
+      "items": [
+        {
+          "id": "cookie-variety",
+          "category": "cake-desserts",
+          "name": {
+            "en": "Cookie (walnut chocolate / Nutella / Diet)",
+            "fa": "کوکی (نیویورکی / نوتلا / رژیمی)"
+          },
+          "description": {
+            "en": "Choice of delicious cookies in three varieties",
+            "fa": "انتخابی از کوکی های خوشمزه در سه نوع مختلف"
+          },
+          "ingredients": {
+            "en": [
+              "Flour",
+              "Butter",
+              "Sugar",
+              "Chocolate/Nutella/Diet ingredients"
+            ],
+            "fa": [
+              "آرد",
+              "کره",
+              "شکر",
+              "شکلات/نوتلا/مواد رژیمی"
             ]
           },
           "calories": 180,
           "price": {
-            "en": 102000,
-            "fa": 75000
+            "en": "90000",
+            "fa": "65000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "cc7",
-          "category": "cold-coffee",
+          "id": "milk-cake",
+          "category": "cake-desserts",
           "name": {
-            "en": "Coffee Mocktail",
-            "fa": "ماکیاتو قهوه"
+            "en": "Milk Cake",
+            "fa": "کیک سه شیر"
           },
           "description": {
-            "en": "Special coffee mocktail",
-            "fa": "ماکتل ویژه قهوه"
+            "en": "Soft sponge cake soaked in three kinds of milk",
+            "fa": "کیک اسفنجی نرم خیس خورده در سه نوع شیر"
           },
           "ingredients": {
             "en": [
-              "Coffee",
-              "Special Ingredients",
-              "Ice"
+              "Flour",
+              "Eggs",
+              "Sugar",
+              "Evaporated milk",
+              "Condensed milk",
+              "Whole milk"
             ],
             "fa": [
-              "قهوه",
-              "مواد ویژه",
-              "یخ"
+              "آرد",
+              "تخم مرغ",
+              "شکر",
+              "شیر تبخیر شده",
+              "شیر غلیظ",
+              "شیر کامل"
             ]
           },
-          "calories": 140,
+          "calories": 350,
           "price": {
-            "en": 108000,
-            "fa": 90000
+            "en": "150000",
+            "fa": "96000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "honey-cake",
+          "category": "cake-desserts",
+          "name": {
+            "en": "Honey cake",
+            "fa": "کیک روسی"
+          },
+          "description": {
+            "en": "Traditional Russian honey layered cake",
+            "fa": "کیک لایه ای عسل سنتی روسی"
+          },
+          "ingredients": {
+            "en": [
+              "Flour",
+              "Honey",
+              "Sugar",
+              "Butter",
+              "Sour cream",
+              "Eggs"
+            ],
+            "fa": [
+              "آرد",
+              "عسل",
+              "شکر",
+              "کره",
+              "خامه ترش",
+              "تخم مرغ"
+            ]
+          },
+          "calories": 380,
+          "price": {
+            "en": "160000",
+            "fa": "118000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "carrot-cake",
+          "category": "cake-desserts",
+          "name": {
+            "en": "Carrot cake",
+            "fa": "کیک هویج کردو"
+          },
+          "description": {
+            "en": "Moist carrot cake with cream cheese frosting",
+            "fa": "کیک مرطوب هویج با فراستینگ پنیر خامه ای"
+          },
+          "ingredients": {
+            "en": [
+              "Carrots",
+              "Flour",
+              "Sugar",
+              "Eggs",
+              "Cream cheese",
+              "Walnuts"
+            ],
+            "fa": [
+              "هویج",
+              "آرد",
+              "شکر",
+              "تخم مرغ",
+              "پنیر خامه ای",
+              "گردو"
+            ]
+          },
+          "calories": 320,
+          "price": {
+            "en": "150000",
+            "fa": "96000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "wet-chocolate-cake",
+          "category": "cake-desserts",
+          "name": {
+            "en": "Wet chocolate cake",
+            "fa": "کیک شکلاتی خیس"
+          },
+          "description": {
+            "en": "Rich and moist chocolate cake with chocolate sauce",
+            "fa": "کیک شکلاتی غنی و مرطوب با سس شکلات"
+          },
+          "ingredients": {
+            "en": [
+              "Chocolate",
+              "Flour",
+              "Sugar",
+              "Eggs",
+              "Butter",
+              "Chocolate sauce"
+            ],
+            "fa": [
+              "شکلات",
+              "آرد",
+              "شکر",
+              "تخم مرغ",
+              "کره",
+              "سس شکلات"
+            ]
+          },
+          "calories": 450,
+          "price": {
+            "en": "190000",
+            "fa": "140000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "san-sebastian-cheesecake",
+          "category": "cake-desserts",
+          "name": {
+            "en": "San Sebastian cheesecake",
+            "fa": "چیز کیک سن سباستین"
+          },
+          "description": {
+            "en": "Basque-style burnt cheesecake with creamy center",
+            "fa": "چیز کیک سوخته به سبک باسک با مرکز خامه ای"
+          },
+          "ingredients": {
+            "en": [
+              "Cream cheese",
+              "Sugar",
+              "Eggs",
+              "Heavy cream",
+              "Vanilla"
+            ],
+            "fa": [
+              "پنیر خامه ای",
+              "شکر",
+              "تخم مرغ",
+              "خامه غلیظ",
+              "وانیل"
+            ]
+          },
+          "calories": 400,
+          "price": {
+            "en": "180000",
+            "fa": "128000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "ice-cream-cake",
+          "category": "cake-desserts",
+          "name": {
+            "en": "Ice cream cake",
+            "fa": "کیک بستنی"
+          },
+          "description": {
+            "en": "Cake layered with ice cream and topped with chocolate",
+            "fa": "کیک لایه گذاری شده با بستنی و روکش شکلات"
+          },
+          "ingredients": {
+            "en": [
+              "Cake sponge",
+              "Vanilla ice cream",
+              "Chocolate ice cream",
+              "Chocolate ganache"
+            ],
+            "fa": [
+              "کیک اسفنجی",
+              "بستنی وانیلی",
+              "بستنی شکلاتی",
+              "گاناش شکلات"
+            ]
+          },
+          "calories": 520,
+          "price": {
+            "en": "250000",
+            "fa": "154000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "lotus-dessert",
+          "category": "cake-desserts",
+          "name": {
+            "en": "Lotus dessert",
+            "fa": "کیک بستنی شکلاتی"
+          },
+          "description": {
+            "en": "Special dessert with Lotus biscuits and cream",
+            "fa": "دسر ویژه با بیسکویت لوتوس و خامه"
+          },
+          "ingredients": {
+            "en": [
+              "Lotus biscuits",
+              "Cream",
+              "Chocolate",
+              "Caramel sauce"
+            ],
+            "fa": [
+              "بیسکویت لوتوس",
+              "خامه",
+              "شکلات",
+              "سس کارامل"
+            ]
+          },
+          "calories": 480,
+          "price": {
+            "en": "290000",
+            "fa": "196000"
           },
           "image": "",
           "isAvailable": true
@@ -1410,168 +2766,182 @@
       "category": "hot-drinks",
       "items": [
         {
-          "id": "hd1",
+          "id": "hot-chocolate",
           "category": "hot-drinks",
           "name": {
             "en": "Hot chocolate",
             "fa": "هات چاکلت"
           },
           "description": {
-            "en": "Rich hot chocolate with steamed milk",
-            "fa": "شکلات داغ غلیظ با شیر بخارپز"
+            "en": "Rich and creamy hot chocolate",
+            "fa": "هات چاکلت غنی و خامه‌ای"
           },
           "ingredients": {
             "en": [
               "Chocolate",
-              "Steamed Milk",
-              "Whipped Cream"
+              "Milk",
+              "Sugar",
+              "Vanilla"
             ],
             "fa": [
               "شکلات",
-              "شیر بخارپز",
-              "خامه زده"
+              "شیر",
+              "شکر",
+              "وانیل"
             ]
           },
           "calories": 250,
           "price": {
-            "en": 90000,
-            "fa": 68000
+            "en": "110000",
+            "fa": "88000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "hd2",
+          "id": "masala",
           "category": "hot-drinks",
           "name": {
-            "en": "Masala tea",
+            "en": "Masala",
             "fa": "ماسالا"
           },
           "description": {
-            "en": "Spiced tea with milk",
-            "fa": "چای ادویه‌دار با شیر"
+            "en": "Spiced milk tea with masala spices",
+            "fa": "چای شیر با ادویه ماسالا"
           },
           "ingredients": {
             "en": [
-              "Tea",
               "Milk",
-              "Spices"
+              "Tea",
+              "Masala spices",
+              "Sugar"
             ],
             "fa": [
-              "چای",
               "شیر",
-              "ادویه‌جات"
-            ]
-          },
-          "calories": 120,
-          "price": {
-            "en": 90000,
-            "fa": 68000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "hd3",
-          "category": "hot-drinks",
-          "name": {
-            "en": "Saffron karak",
-            "fa": "کرک زعفرانی"
-          },
-          "description": {
-            "en": "Karak tea with saffron",
-            "fa": "چای کرک با زعفران"
-          },
-          "ingredients": {
-            "en": [
-              "Tea",
-              "Milk",
-              "Saffron"
-            ],
-            "fa": [
               "چای",
-              "شیر",
-              "زعفران"
+              "ادویه ماسالا",
+              "شکر"
             ]
           },
           "calories": 180,
           "price": {
-            "en": 90000,
-            "fa": 78000
+            "en": "110000",
+            "fa": "88000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "hd4",
+          "id": "saffron-karak-arabic",
           "category": "hot-drinks",
           "name": {
-            "en": "Pistachio karak",
-            "fa": "کرک پسته‌ای"
+            "en": "Saffron Karak (Arabic)",
+            "fa": "کرک زعفرانی (عربی)"
           },
           "description": {
-            "en": "Karak tea with pistachio",
-            "fa": "چای کرک با پسته"
+            "en": "Arabic style saffron-infused milk tea",
+            "fa": "چای شیر زعفرانی به سبک عربی"
           },
           "ingredients": {
             "en": [
-              "Tea",
               "Milk",
-              "Pistachio"
+              "Tea",
+              "Saffron",
+              "Cardamom",
+              "Sugar"
             ],
             "fa": [
-              "چای",
               "شیر",
-              "پسته"
+              "چای",
+              "زعفران",
+              "هل",
+              "شکر"
+            ]
+          },
+          "calories": 190,
+          "price": {
+            "en": "110000",
+            "fa": "88000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "saffron-karak",
+          "category": "hot-drinks",
+          "name": {
+            "en": "Saffron Karak",
+            "fa": "کرک پسته ای"
+          },
+          "description": {
+            "en": "Saffron-infused milk tea with pistachio",
+            "fa": "چای شیر زعفرانی با پسته"
+          },
+          "ingredients": {
+            "en": [
+              "Milk",
+              "Tea",
+              "Saffron",
+              "Pistachio",
+              "Sugar"
+            ],
+            "fa": [
+              "شیر",
+              "چای",
+              "زعفران",
+              "پسته",
+              "شکر"
             ]
           },
           "calories": 200,
           "price": {
-            "en": 105000,
-            "fa": 88000
+            "en": "110000",
+            "fa": "98000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "hd5",
+          "id": "nescafe-milk",
           "category": "hot-drinks",
           "name": {
-            "en": "Nescafe",
-            "fa": "نسکافه"
+            "en": "Nescafe milk",
+            "fa": "شیر نسکافه"
           },
           "description": {
-            "en": "Classic Nescafe",
-            "fa": "نسکافه کلاسیک"
+            "en": "Warm milk with Nescafe instant coffee",
+            "fa": "شیر گرم با قهوه فوری نسکافه"
           },
           "ingredients": {
             "en": [
-              "Nescafe",
-              "Hot Water"
+              "Milk",
+              "Nescafe instant coffee",
+              "Sugar"
             ],
             "fa": [
-              "نسکافه",
-              "آب داغ"
+              "شیر",
+              "قهوه فوری نسکافه",
+              "شکر"
             ]
           },
-          "calories": 140,
+          "calories": 170,
           "price": {
-            "en": 90000,
-            "fa": 68000
+            "en": "110000",
+            "fa": "92000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "hd6",
+          "id": "honey-cinnamon-milk",
           "category": "hot-drinks",
           "name": {
-            "en": "Cinemon honey milk",
+            "en": "Honey cinnamon milk",
             "fa": "شیر عسل دارچین"
           },
           "description": {
-            "en": "Hot milk with honey and cinnamon",
-            "fa": "شیر داغ با عسل و دارچین"
+            "en": "Warm milk sweetened with honey and spiced with cinnamon",
+            "fa": "شیر گرم شیرین شده با عسل و طعم دار شده با دارچین"
           },
           "ingredients": {
             "en": [
@@ -1585,68 +2955,165 @@
               "دارچین"
             ]
           },
-          "calories": 160,
+          "calories": 190,
           "price": {
-            "en": 90000,
-            "fa": 68000
+            "en": "110000",
+            "fa": "88000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "hd7",
+          "id": "cocoa-milk",
           "category": "hot-drinks",
           "name": {
             "en": "Cocoa milk",
             "fa": "شیر کاکائو"
           },
           "description": {
-            "en": "Hot milk with cocoa",
-            "fa": "شیر داغ با کاکائو"
+            "en": "Warm milk with cocoa powder",
+            "fa": "شیر گرم با پودر کاکائو"
           },
           "ingredients": {
             "en": [
               "Milk",
-              "Cocoa"
+              "Cocoa powder",
+              "Sugar"
             ],
             "fa": [
               "شیر",
-              "کاکائو"
+              "پودر کاکائو",
+              "شکر"
             ]
           },
-          "calories": 170,
+          "calories": 160,
           "price": {
-            "en": 90000,
-            "fa": 68000
+            "en": "110000",
+            "fa": "75000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "hd8",
+          "id": "milk-tea",
           "category": "hot-drinks",
           "name": {
-            "en": "Tea milk",
+            "en": "Milk tea",
             "fa": "شیر چای"
           },
           "description": {
-            "en": "Hot milk with tea",
-            "fa": "شیر داغ با چای"
+            "en": "Traditional milk tea",
+            "fa": "چای شیر سنتی"
           },
           "ingredients": {
             "en": [
               "Milk",
-              "Tea"
+              "Tea",
+              "Sugar"
             ],
             "fa": [
               "شیر",
-              "چای"
+              "چای",
+              "شکر"
             ]
           },
-          "calories": 120,
+          "calories": 150,
           "price": {
-            "en": 102000,
-            "fa": 68000
+            "en": "110000",
+            "fa": "80000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "lotus-milk",
+          "category": "hot-drinks",
+          "name": {
+            "en": "Lotus milk",
+            "fa": "شیر لوتوس"
+          },
+          "description": {
+            "en": "Warm milk flavored with lotus biscuit spread",
+            "fa": "شیر گرم با طعم خمیر بیسکویت لوتوس"
+          },
+          "ingredients": {
+            "en": [
+              "Milk",
+              "Lotus biscuit spread",
+              "Sugar"
+            ],
+            "fa": [
+              "شیر",
+              "خمیر بیسکویت لوتوس",
+              "شکر"
+            ]
+          },
+          "calories": 270,
+          "price": {
+            "en": "140000",
+            "fa": "98000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "nutella-milk",
+          "category": "hot-drinks",
+          "name": {
+            "en": "Nutella milk",
+            "fa": "شیر نوتلا"
+          },
+          "description": {
+            "en": "Warm milk with Nutella chocolate hazelnut spread",
+            "fa": "شیر گرم با شکلات فندقی نوتلا"
+          },
+          "ingredients": {
+            "en": [
+              "Milk",
+              "Nutella",
+              "Sugar"
+            ],
+            "fa": [
+              "شیر",
+              "نوتلا",
+              "شکر"
+            ]
+          },
+          "calories": 290,
+          "price": {
+            "en": "140000",
+            "fa": "98000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "pistachio-milk",
+          "category": "hot-drinks",
+          "name": {
+            "en": "Pistachio milk",
+            "fa": "شیر پسته"
+          },
+          "description": {
+            "en": "Warm milk with pistachio flavor",
+            "fa": "شیر گرم با طعم پسته"
+          },
+          "ingredients": {
+            "en": [
+              "Milk",
+              "Pistachio paste",
+              "Sugar"
+            ],
+            "fa": [
+              "شیر",
+              "خمیر پسته",
+              "شکر"
+            ]
+          },
+          "calories": 260,
+          "price": {
+            "en": "140000",
+            "fa": "98000"
           },
           "image": "",
           "isAvailable": true
@@ -1657,252 +3124,218 @@
       "category": "herbal-tea",
       "items": [
         {
-          "id": "ht1",
+          "id": "black-tea",
           "category": "herbal-tea",
           "name": {
-            "en": "Black tea (saffaron/cardamom)",
-            "fa": "چای سیاه (هل / زعفران)"
+            "en": "Black tea (cardamom/saffron)",
+            "fa": "چای سیاه (هل/زعفران)"
           },
           "description": {
-            "en": "Traditional black tea with optional saffron",
-            "fa": "چای سیاه سنتی با انتخاب زعفران"
+            "en": "Traditional black tea with choice of cardamom or saffron",
+            "fa": "چای سیاه سنتی با انتخاب هل یا زعفران"
           },
           "ingredients": {
             "en": [
-              "Black Tea",
-              "Optional: Saffron",
-              "Cardamom"
+              "Black tea",
+              "Cardamom/Saffron"
             ],
             "fa": [
               "چای سیاه",
-              "زعفران (اختیاری)",
-              "هل"
+              "هل/زعفران"
             ]
           },
-          "calories": 0,
+          "calories": 5,
           "price": {
-            "en": 50000,
-            "fa": 45000
+            "en": "75000",
+            "fa": "50000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "ht2",
+          "id": "green-tea",
           "category": "herbal-tea",
           "name": {
             "en": "Green tea (mint/lemon)",
-            "fa": "چای سبز (تازه/بلیمو)"
+            "fa": "چای سبز (نعنا/لیمو)"
           },
           "description": {
-            "en": "Green tea, fresh or bagged",
-            "fa": "چای سبز، تازه یا کیسه‌ای"
+            "en": "Fresh green tea with choice of mint or lemon",
+            "fa": "چای سبز تازه با انتخاب نعنا یا لیمو"
           },
           "ingredients": {
             "en": [
-              "Green Tea"
+              "Green tea",
+              "Mint/Lemon"
             ],
             "fa": [
-              "چای سبز"
+              "چای سبز",
+              "نعنا/لیمو"
             ]
           },
-          "calories": 0,
+          "calories": 5,
           "price": {
-            "en": 66000,
-            "fa": 55000
+            "en": "110000",
+            "fa": "75000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "ht3",
+          "id": "apple-cinnamon-tea",
           "category": "herbal-tea",
           "name": {
-            "en": "Relaxing tea",
+            "en": "Apples with cinnamon",
+            "fa": "سیب با دارچین"
+          },
+          "description": {
+            "en": "Fragrant herbal tea with apples and cinnamon",
+            "fa": "دمنوش معطر با سیب و دارچین"
+          },
+          "ingredients": {
+            "en": [
+              "Dried apple pieces",
+              "Cinnamon",
+              "Herbal blend"
+            ],
+            "fa": [
+              "تکه های سیب خشک",
+              "دارچین",
+              "ترکیب گیاهی"
+            ]
+          },
+          "calories": 20,
+          "price": {
+            "en": "120000",
+            "fa": "75000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "calming-tea",
+          "category": "herbal-tea",
+          "name": {
+            "en": "Calming tea",
             "fa": "دمنوش آرامش"
           },
           "description": {
-            "en": "Herbal tea blend for relaxation",
-            "fa": "ترکیب دمنوش برای آرامش"
+            "en": "Relaxing herbal blend to promote calmness",
+            "fa": "ترکیب گیاهی آرامش بخش"
           },
           "ingredients": {
             "en": [
               "Chamomile",
               "Lavender",
-              "Other Calming Herbs"
+              "Lemon balm",
+              "Valerian"
             ],
             "fa": [
               "بابونه",
               "اسطوخودوس",
-              "گیاهان آرامبخش"
-            ]
-          },
-          "calories": 0,
-          "price": {
-            "en": 84000,
-            "fa": 68000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "ht4",
-          "category": "herbal-tea",
-          "name": {
-            "en": "Energetic tea",
-            "fa": "دمنوش انرژی"
-          },
-          "description": {
-            "en": "Herbal tea blend for energy",
-            "fa": "ترکیب دمنوش برای انرژی"
-          },
-          "ingredients": {
-            "en": [
-              "Ginger",
-              "Lemon",
-              "Energy-Boosting Herbs"
-            ],
-            "fa": [
-              "زنجبیل",
-              "لیمو",
-              "گیاهان انرژی‌زا"
-            ]
-          },
-          "calories": 0,
-          "price": {
-            "en": 84000,
-            "fa": 72000
-          },
-          "image": "",
-          "isAvailable": true
-        },
-        {
-          "id": "ht5",
-          "category": "herbal-tea",
-          "name": {
-            "en": "Anti cold tea",
-            "fa": "دمنوش ضد سرماخوردگی"
-          },
-          "description": {
-            "en": "Herbal tea blend for cold prevention",
-            "fa": "ترکیب دمنوش برای پیشگیری از سرماخوردگی"
-          },
-          "ingredients": {
-            "en": [
-              "Thyme",
-              "Ginger",
-              "Honey",
-              "Lemon"
-            ],
-            "fa": [
-              "آویشن",
-              "زنجبیل",
-              "عسل",
-              "لیمو"
-            ]
-          },
-          "calories": 30,
-          "price": {
-            "en": 84000,
-            "fa": 68000
-          },
-          "image": "",
-          "isAvailable": true
-        }
-      ]
-    },
-    {
-      "category": "cold-brews",
-      "items": [
-        {
-          "id": "cb1",
-          "category": "cold-brews",
-          "name": {
-            "en": "Classic",
-            "fa": "کلد برو ساده"
-          },
-          "description": {
-            "en": "Classic cold brewed coffee",
-            "fa": "قهوه دم سرد کلاسیک"
-          },
-          "ingredients": {
-            "en": [
-              "Cold Brewed Coffee",
-              "Ice"
-            ],
-            "fa": [
-              "قهوه دم سرد",
-              "یخ"
+              "بادرنجبویه",
+              "سنبل الطیب"
             ]
           },
           "calories": 5,
           "price": {
-            "en": 90000,
-            "fa": 75000
+            "en": "120000",
+            "fa": "75000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "cb2",
-          "category": "cold-brews",
+          "id": "energy-tea",
+          "category": "herbal-tea",
           "name": {
-            "en": "Soda & Lemon",
-            "fa": "کلد برو سودا لیمو"
+            "en": "Energy tea",
+            "fa": "دمنوش انرژی"
           },
           "description": {
-            "en": "Cold brew with soda and lemon",
-            "fa": "قهوه دم سرد با سودا و لیمو"
+            "en": "Revitalizing herbal blend to boost energy",
+            "fa": "ترکیب گیاهی انرژی زا"
           },
           "ingredients": {
             "en": [
-              "Cold Brewed Coffee",
-              "Soda",
+              "Ginseng",
+              "Ginger",
+              "Cinnamon",
+              "Lemongrass"
+            ],
+            "fa": [
+              "جینسنگ",
+              "زنجبیل",
+              "دارچین",
+              "لمون گراس"
+            ]
+          },
+          "calories": 10,
+          "price": {
+            "en": "120000",
+            "fa": "75000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "anti-cold-tea",
+          "category": "herbal-tea",
+          "name": {
+            "en": "Anti-cold tea",
+            "fa": "دمنوش ضد سرماخوردگی"
+          },
+          "description": {
+            "en": "Herbal blend to help with cold symptoms",
+            "fa": "ترکیب گیاهی برای کمک به علائم سرماخوردگی"
+          },
+          "ingredients": {
+            "en": [
+              "Ginger",
               "Lemon",
-              "Ice"
+              "Honey",
+              "Thyme"
             ],
             "fa": [
-              "قهوه دم سرد",
-              "سودا",
+              "زنجبیل",
               "لیمو",
-              "یخ"
+              "عسل",
+              "آویشن"
             ]
           },
-          "calories": 15,
+          "calories": 30,
           "price": {
-            "en": 120000,
-            "fa": 95000
+            "en": "120000",
+            "fa": "75000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "cb3",
-          "category": "cold-brews",
+          "id": "simple-herbal-tea",
+          "category": "herbal-tea",
           "name": {
-            "en": "mocktail",
-            "fa": "کلد برو طعم‌دار"
+            "en": "Simple herbal tea",
+            "fa": "دمنوش ساده"
           },
           "description": {
-            "en": "Cold brew mocktail",
-            "fa": "کلد برو ماکتل"
+            "en": "Classic blend of fragrant herbs",
+            "fa": "ترکیب کلاسیک گیاهان معطر"
           },
           "ingredients": {
             "en": [
-              "Cold Brewed Coffee",
-              "Special Ingredients",
-              "Ice"
+              "Herbal tea blend",
+              "Hot water"
             ],
             "fa": [
-              "قهوه دم سرد",
-              "مواد ویژه",
-              "یخ"
+              "ترکیب دمنوش گیاهی",
+              "آب داغ"
             ]
           },
-          "calories": 50,
+          "calories": 5,
           "price": {
-            "en": 132000,
-            "fa": 105000
+            "en": "120000",
+            "fa": "75000"
           },
           "image": "",
           "isAvailable": true
@@ -1910,95 +3343,379 @@
       ]
     },
     {
-      "category": "cake-desserts",
+      "category": "mocktails",
       "items": [
         {
-          "id": "cd1",
-          "category": "cake-desserts",
+          "id": "seasonal-fruit-juice",
+          "category": "mocktails",
           "name": {
-            "en": "Cookies",
-            "fa": "کوکی"
+            "en": "Seasonal fruit juice",
+            "fa": "آب میوه فصل"
           },
           "description": {
-            "en": "Freshly baked cookies",
-            "fa": "کوکی تازه پخته شده"
+            "en": "Fresh juice made from seasonal fruits",
+            "fa": "آب میوه تازه تهیه شده از میوه های فصل"
           },
           "ingredients": {
             "en": [
-              "Flour",
-              "Butter",
-              "Sugar",
-              "Chocolate Chips"
+              "Seasonal fruits",
+              "Ice"
             ],
             "fa": [
-              "آرد",
-              "کره",
+              "میوه های فصل",
+              "یخ"
+            ]
+          },
+          "calories": 120,
+          "price": {
+            "en": "150000",
+            "fa": "98000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "traditional-drinks",
+          "category": "mocktails",
+          "name": {
+            "en": "Traditional Drinks",
+            "fa": "عرقیجات و شربت های سنتی"
+          },
+          "description": {
+            "en": "Selection of traditional Persian drinks and syrups",
+            "fa": "انتخابی از عرقیجات و شربت های سنتی ایرانی"
+          },
+          "ingredients": {
+            "en": [
+              "Traditional syrups",
+              "Water",
+              "Ice"
+            ],
+            "fa": [
+              "شربت های سنتی",
+              "آب",
+              "یخ"
+            ]
+          },
+          "calories": 100,
+          "price": {
+            "en": "120000",
+            "fa": "88000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "banana-milk",
+          "category": "mocktails",
+          "name": {
+            "en": "Banana milk (strawberry)",
+            "fa": "شیرموز (توت فرنگی)"
+          },
+          "description": {
+            "en": "Refreshing banana milk with strawberry flavor",
+            "fa": "شیرموز خنک با طعم توت فرنگی"
+          },
+          "ingredients": {
+            "en": [
+              "Milk",
+              "Banana",
+              "Strawberry",
+              "Sugar",
+              "Ice"
+            ],
+            "fa": [
+              "شیر",
+              "موز",
+              "توت فرنگی",
               "شکر",
-              "تکه‌های شکلات"
+              "یخ"
+            ]
+          },
+          "calories": 200,
+          "price": {
+            "en": "190000",
+            "fa": "120000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "iced-tea",
+          "category": "mocktails",
+          "name": {
+            "en": "Iced Tea (plain/flavored)",
+            "fa": "آیس تی (ساده/طعم دار)"
+          },
+          "description": {
+            "en": "Chilled tea, available plain or with flavor options",
+            "fa": "چای سرد، موجود به صورت ساده یا طعم دار"
+          },
+          "ingredients": {
+            "en": [
+              "Tea",
+              "Water",
+              "Ice",
+              "Optional flavors"
+            ],
+            "fa": [
+              "چای",
+              "آب",
+              "یخ",
+              "طعم دهنده های اختیاری"
+            ]
+          },
+          "calories": 80,
+          "price": {
+            "en": "190000",
+            "fa": "135000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "lemonade",
+          "category": "mocktails",
+          "name": {
+            "en": "Lemonade (plain/flavored)",
+            "fa": "لیموناد (ساده/طعم دار)"
+          },
+          "description": {
+            "en": "Classic lemonade, available plain or with flavor options",
+            "fa": "لیموناد کلاسیک، موجود به صورت ساده یا طعم دار"
+          },
+          "ingredients": {
+            "en": [
+              "Lemon juice",
+              "Water",
+              "Sugar",
+              "Ice",
+              "Optional flavors"
+            ],
+            "fa": [
+              "آب لیمو",
+              "آب",
+              "شکر",
+              "یخ",
+              "طعم دهنده های اختیاری"
+            ]
+          },
+          "calories": 100,
+          "price": {
+            "en": "150000",
+            "fa": "110000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "mojito",
+          "category": "mocktails",
+          "name": {
+            "en": "Mojito (plain/flavored)",
+            "fa": "موهیتو (ساده/طعم دار)"
+          },
+          "description": {
+            "en": "Non-alcoholic mojito with fresh mint, available plain or with flavor options",
+            "fa": "موهیتو بدون الکل با نعناع تازه، موجود به صورت ساده یا طعم دار"
+          },
+          "ingredients": {
+            "en": [
+              "Lime juice",
+              "Mint leaves",
+              "Sugar",
+              "Soda water",
+              "Ice",
+              "Optional flavors"
+            ],
+            "fa": [
+              "آب لیمو",
+              "برگ نعناع",
+              "شکر",
+              "آب گازدار",
+              "یخ",
+              "طعم دهنده های اختیاری"
+            ]
+          },
+          "calories": 120,
+          "price": {
+            "en": "160000",
+            "fa": "122000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "margarita",
+          "category": "mocktails",
+          "name": {
+            "en": "Margarita",
+            "fa": "مارگاریتا"
+          },
+          "description": {
+            "en": "Non-alcoholic margarita mocktail",
+            "fa": "ماکتل مارگاریتا بدون الکل"
+          },
+          "ingredients": {
+            "en": [
+              "Lime juice",
+              "Orange juice",
+              "Simple syrup",
+              "Salt",
+              "Ice"
+            ],
+            "fa": [
+              "آب لیمو",
+              "آب پرتقال",
+              "شربت ساده",
+              "نمک",
+              "یخ"
+            ]
+          },
+          "calories": 110,
+          "price": {
+            "en": "150000",
+            "fa": "98000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "red-sun",
+          "category": "mocktails",
+          "name": {
+            "en": "Red Sun",
+            "fa": "رد سان"
+          },
+          "description": {
+            "en": "Vibrant red mocktail with fruity flavors",
+            "fa": "ماکتل قرمز درخشان با طعم های میوه ای"
+          },
+          "ingredients": {
+            "en": [
+              "Strawberry",
+              "Raspberry",
+              "Orange juice",
+              "Grenadine",
+              "Ice"
+            ],
+            "fa": [
+              "توت فرنگی",
+              "تمشک",
+              "آب پرتقال",
+              "گرنادین",
+              "یخ"
             ]
           },
           "calories": 150,
           "price": {
-            "en": 48000,
-            "fa": 40000
+            "en": "150000",
+            "fa": "118000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "cd2",
-          "category": "cake-desserts",
+          "id": "blue-ocean",
+          "category": "mocktails",
           "name": {
-            "en": "Cake of the day",
-            "fa": "کیک روز"
+            "en": "Blue Ocean",
+            "fa": "بلو اوشن"
           },
           "description": {
-            "en": "Fresh daily special cake",
-            "fa": "کیک تازه روز"
+            "en": "Blue colored mocktail with tropical flavors",
+            "fa": "ماکتل آبی رنگ با طعم های استوایی"
           },
           "ingredients": {
             "en": [
-              "Various Fresh Ingredients"
+              "Blue curacao syrup",
+              "Lime juice",
+              "Sprite",
+              "Ice"
             ],
             "fa": [
-              "مواد تازه متنوع"
+              "شربت بلو کوراسائو",
+              "آب لیمو",
+              "اسپرایت",
+              "یخ"
             ]
           },
-          "calories": 280,
+          "calories": 140,
           "price": {
-            "en": 114000,
-            "fa": 88000
+            "en": "150000",
+            "fa": "118000"
           },
           "image": "",
           "isAvailable": true
         },
         {
-          "id": "cd3",
-          "category": "cake-desserts",
+          "id": "green-mix",
+          "category": "mocktails",
           "name": {
-            "en": "Ice cream cake",
-            "fa": "کیک بستنی"
+            "en": "Green Mix",
+            "fa": "گرین میکس"
           },
           "description": {
-            "en": "Special ice cream cake",
-            "fa": "کیک بستنی مخصوص"
+            "en": "Green colored mocktail with refreshing herbal notes",
+            "fa": "ماکتل سبز رنگ با رایحه های گیاهی خنک کننده"
           },
           "ingredients": {
             "en": [
-              "Ice Cream",
-              "Cake Base",
-              "Special Toppings"
+              "Lime juice",
+              "Mint",
+              "Cucumber",
+              "Simple syrup",
+              "Soda water",
+              "Ice"
             ],
             "fa": [
-              "بستنی",
-              "پایه کیک",
-              "تزئینات مخصوص"
+              "آب لیمو",
+              "نعناع",
+              "خیار",
+              "شربت ساده",
+              "آب گازدار",
+              "یخ"
             ]
           },
-          "calories": 320,
+          "calories": 120,
           "price": {
-            "en": 186000,
-            "fa": 154000
+            "en": "150000",
+            "fa": "118000"
+          },
+          "image": "",
+          "isAvailable": true
+        },
+        {
+          "id": "cactus",
+          "category": "mocktails",
+          "name": {
+            "en": "Cactus",
+            "fa": "کاکتوس"
+          },
+          "description": {
+            "en": "Unique mocktail with cactus flavor inspiration",
+            "fa": "ماکتل منحصر به فرد با الهام از طعم کاکتوس"
+          },
+          "ingredients": {
+            "en": [
+              "Lime juice",
+              "Green apple syrup",
+              "Mint",
+              "Soda water",
+              "Ice"
+            ],
+            "fa": [
+              "آب لیمو",
+              "شربت سیب سبز",
+              "نعناع",
+              "آب گازدار",
+              "یخ"
+            ]
+          },
+          "calories": 130,
+          "price": {
+            "en": "150000",
+            "fa": "118000"
           },
           "image": "",
           "isAvailable": true
