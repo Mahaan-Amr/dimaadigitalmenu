@@ -33,16 +33,41 @@ export default function AdminPage() {
   const [categories, setCategories] = useState<string[]>(initialCategories);
   const [isManagingCategories, setIsManagingCategories] = useState(false);
   const [newCategory, setNewCategory] = useState('');
+  const [draggingCategory, setDraggingCategory] = useState<string | null>(null);
+  const [predefinedCategories, setPredefinedCategories] = useState<string[]>([...PREDEFINED_CATEGORIES]);
   const { logout } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
     fetchMenuItems();
+    fetchCategories();
     
     // Check if we should show onboarding
     const hasSeenOnboarding = localStorage.getItem('adminOnboardingCompleted') === 'true';
     setShowOnboarding(!hasSeenOnboarding);
   }, []);
+
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch('/api/categories');
+      if (!response.ok) {
+        throw new Error(`Failed to fetch categories: ${response.status} ${response.statusText}`);
+      }
+      
+      const data = await response.json();
+      if (data.categories && Array.isArray(data.categories)) {
+        setCategories(data.categories);
+      }
+      
+      if (data.predefinedCategories && Array.isArray(data.predefinedCategories)) {
+        setPredefinedCategories(data.predefinedCategories);
+      }
+    } catch (error) {
+      console.error('[Admin] Failed to fetch categories:', error);
+      // Fall back to predefined categories
+      setCategories(initialCategories);
+    }
+  };
 
   const fetchMenuItems = async () => {
     try {
@@ -50,7 +75,7 @@ export default function AdminPage() {
       const data = await response.json();
       setSections(data);
     } catch (error) {
-      console.error('Failed to fetch menu items:', error);
+      console.error('[Admin] Failed to fetch menu items:', error);
     } finally {
       setIsLoading(false);
     }
@@ -107,7 +132,7 @@ export default function AdminPage() {
 
       await fetchMenuItems();
     } catch (error) {
-      console.error('Error deleting menu item:', error);
+      console.error('[Admin] Error deleting menu item:', error);
     }
   };
 
@@ -116,24 +141,121 @@ export default function AdminPage() {
     router.push('/admin/login');
   };
 
-  const handleAddCategory = () => {
+  const handleAddCategory = async () => {
     if (newCategory.trim() && !categories.includes(newCategory.trim())) {
-      // Add the new category
-      setCategories(prev => [...prev, newCategory.trim()]);
+      // Add the new category to our local state
+      const updatedCategories = [...categories, newCategory.trim()];
+      setCategories(updatedCategories);
+      
       // Reset the input field
       setNewCategory('');
+      
+      // Save to the API
+      try {
+        const response = await fetch('/api/categories', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ categories: updatedCategories }),
+        });
+        
+        if (!response.ok) {
+          throw new Error(`Failed to update categories: ${response.status} ${response.statusText}`);
+        }
+        
+        // Refresh categories from API
+        await fetchCategories();
+        await fetchMenuItems();
+      } catch (error) {
+        console.error('[Admin] Failed to save categories:', error);
+      }
     }
   };
 
-  const handleRemoveCategory = (categoryToRemove: string) => {
+  const handleRemoveCategory = async (categoryToRemove: string) => {
     // Check if the category is a predefined one
-    if ((PREDEFINED_CATEGORIES as readonly string[]).includes(categoryToRemove)) {
+    if (predefinedCategories.includes(categoryToRemove)) {
       // Don't allow removing predefined categories
       return;
     }
     
-    // Remove the category
-    setCategories(prev => prev.filter(category => category !== categoryToRemove));
+    try {
+      const response = await fetch('/api/categories', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ category: categoryToRemove }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Failed to delete category: ${response.status} ${response.statusText}`);
+      }
+      
+      // Remove the category from local state
+      setCategories(prev => prev.filter(category => category !== categoryToRemove));
+      
+      // Refresh data
+      await fetchCategories();
+      await fetchMenuItems();
+    } catch (error) {
+      console.error('[Admin] Failed to delete category:', error);
+    }
+  };
+
+  const handleReorderCategories = async (updatedCategories: string[]) => {
+    setCategories(updatedCategories);
+    
+    try {
+      const response = await fetch('/api/categories', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ categories: updatedCategories }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Failed to reorder categories: ${response.status} ${response.statusText}`);
+      }
+      
+      await fetchMenuItems();
+    } catch (error) {
+      console.error('[Admin] Failed to reorder categories:', error);
+      // Revert to previous state if failed
+      await fetchCategories();
+    }
+  };
+
+  const handleDragStart = (category: string) => {
+    setDraggingCategory(category);
+  };
+
+  const handleDragOver = (e: React.DragEvent, category: string) => {
+    e.preventDefault();
+    
+    if (!draggingCategory || draggingCategory === category) {
+      return;
+    }
+    
+    // Move the category in the array
+    const updatedCategories = [...categories];
+    const draggedIndex = updatedCategories.indexOf(draggingCategory);
+    const targetIndex = updatedCategories.indexOf(category);
+    
+    if (draggedIndex !== -1 && targetIndex !== -1) {
+      updatedCategories.splice(draggedIndex, 1);
+      updatedCategories.splice(targetIndex, 0, draggingCategory);
+      setCategories(updatedCategories);
+    }
+  };
+
+  const handleDragEnd = () => {
+    if (draggingCategory) {
+      handleReorderCategories(categories);
+      setDraggingCategory(null);
+    }
   };
 
   const handleIngredientsChange = (
@@ -206,18 +328,40 @@ export default function AdminPage() {
               
               <div className="mb-6">
                 <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
-                  Current Categories
+                  Current Categories <span className="text-sm text-gray-500">(Drag to reorder)</span>
                 </h3>
                 <div className="space-y-2 max-h-60 overflow-y-auto">
                   {categories.map((category) => (
                     <div
                       key={category}
-                      className="flex items-center justify-between p-2 rounded-md bg-gray-50 dark:bg-gray-700"
+                      draggable
+                      onDragStart={() => handleDragStart(category)}
+                      onDragOver={(e) => handleDragOver(e, category)}
+                      onDragEnd={handleDragEnd}
+                      className={`flex items-center justify-between p-2 rounded-md ${
+                        draggingCategory === category 
+                          ? 'bg-blue-100 dark:bg-blue-900' 
+                          : 'bg-gray-50 dark:bg-gray-700'
+                      } cursor-grab`}
                     >
-                      <span className="text-gray-700 dark:text-gray-300">
+                      <span className="text-gray-700 dark:text-gray-300 flex items-center">
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-5 w-5 mr-2 text-gray-400" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
                         {category}
+                        {predefinedCategories.includes(category) && (
+                          <span className="ml-2 text-xs bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 px-2 py-0.5 rounded-full">
+                            Default
+                          </span>
+                        )}
                       </span>
-                      {!(PREDEFINED_CATEGORIES as readonly string[]).includes(category) && (
+                      {!predefinedCategories.includes(category) && (
                         <button
                           onClick={() => handleRemoveCategory(category)}
                           className="text-red-500 hover:text-red-700"

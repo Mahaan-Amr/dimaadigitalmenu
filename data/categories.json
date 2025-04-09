@@ -1,0 +1,26 @@
+{
+  "categories": [
+    "breakfast",
+    "milkshakes",
+    "mocktails",
+    "smoothies",
+    "hot-coffee",
+    "cold-coffee",
+    "hot-drinks",
+    "herbal-tea",
+    "cold-brews",
+    "cake-desserts"
+  ],
+  "predefinedCategories": [
+    "breakfast",
+    "hot-coffee",
+    "cold-coffee",
+    "mocktails",
+    "smoothies",
+    "milkshakes",
+    "hot-drinks",
+    "cold-brews",
+    "herbal-tea",
+    "cake-desserts"
+  ]
+}

@@ -17,9 +17,21 @@ export default function ImageUpload({
   const [error, setError] = useState('');
   const [isDragging, setIsDragging] = useState(false);
 
+  // Helper function to ensure image URL is complete
+  const getImageUrl = (url: string) => {
+    if (!url) return '';
+    // If it's an upload path, make sure it's an absolute path
+    if (url.startsWith('/uploads/')) {
+      return url; // This is already absolute from the site root
+    }
+    return url;
+  };
+
   const handleUpload = async (file: File) => {
     setError('');
     setIsUploading(true);
+    
+    console.log(`Uploading file: ${file.name}, type: ${file.type}, size: ${file.size} bytes`);
 
     try {
       const formData = new FormData();
@@ -30,15 +42,29 @@ export default function ImageUpload({
         body: formData,
       });
 
+      const data = await response.json();
+      console.log('Upload response:', data);
+
       if (!response.ok) {
-        throw new Error('Upload failed');
+        console.error('Upload failed with status:', response.status);
+        console.error('Error details:', data);
+        throw new Error(data.error || 'Upload failed');
       }
 
-      const data = await response.json();
+      if (!data.url) {
+        console.error('Invalid response format, missing URL:', data);
+        throw new Error('Invalid server response');
+      }
+
+      console.log('Upload successful, URL:', data.url);
       onImageUpload(data.url);
     } catch (err) {
-      setError('Failed to upload image');
       console.error('Upload error:', err);
+      if (err instanceof Error) {
+        setError(`Upload failed: ${err.message}`);
+      } else {
+        setError('Failed to upload image. Please try again.');
+      }
     } finally {
       setIsUploading(false);
     }
@@ -73,6 +99,9 @@ export default function ImageUpload({
     }
   };
 
+  // Use the actual image URL for displaying
+  const displayImageUrl = getImageUrl(currentImage);
+
   return (
     <div className="space-y-4">
       <div
@@ -86,19 +115,29 @@ export default function ImageUpload({
         onDragLeave={handleDragLeave}
       >
         <AnimatePresence>
-          {currentImage && !isUploading && (
+          {displayImageUrl && !isUploading && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="absolute inset-0"
             >
-              <Image
-                src={currentImage}
-                alt="Uploaded image"
-                fill
-                className="object-cover"
-              />
+              {displayImageUrl.startsWith('/uploads/') ? (
+                // Use img tag for local uploads to avoid Next.js Image component path issues
+                <img
+                  src={displayImageUrl}
+                  alt="Uploaded image"
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <Image
+                  src={displayImageUrl}
+                  alt="Uploaded image"
+                  fill
+                  className="object-cover"
+                  unoptimized={displayImageUrl.startsWith('/uploads/')}
+                />
+              )}
               <div className="absolute inset-0 bg-black/40 transition-opacity opacity-0 hover:opacity-100">
                 <div className="flex items-center justify-center h-full">
                   <span className="text-white text-sm">
@@ -110,7 +149,7 @@ export default function ImageUpload({
           )}
         </AnimatePresence>
 
-        {!currentImage && !isUploading && (
+        {!displayImageUrl && !isUploading && (
           <div className="flex items-center justify-center h-full">
             <div className="text-center">
               <div className="text-gray-500 dark:text-gray-400">

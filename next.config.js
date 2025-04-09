@@ -4,16 +4,23 @@ const nextConfig = {
     VERCEL_URL: process.env.VERCEL_URL || 'localhost:3000',
   },
   images: {
-    domains: ['localhost', 'dimaadigitalmenu.vercel.app'],
+    domains: ['localhost', 'dimaadigitalmenu.vercel.app', 'dimaacafe.ir'],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: '**',
       },
     ],
+    // Unoptimized is the simplest solution for local image uploads
+    unoptimized: true,
   },
-  // Enable static exports for better performance
+  // Keep output configuration
   output: 'standalone',
+  // Simplify asset handling
+  experimental: {
+    // Only keep necessary experimental features
+    serverComponentsExternalPackages: ['fs'],
+  },
 }
 
 module.exports = nextConfig 
