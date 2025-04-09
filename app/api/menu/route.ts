@@ -171,36 +171,103 @@ export async function POST(request: Request) {
 export async function DELETE(request: Request) {
   console.log('[API] DELETE request received');
   try {
-    const { id } = await request.json();
-    console.log('[API] Deleting menu item:', id);
+    const body = await request.json();
+    console.log('[API] DELETE request body:', JSON.stringify(body, null, 2));
+    
+    const { id } = body;
+    if (!id) {
+      console.error('[API] Delete error: No ID provided');
+      return NextResponse.json(
+        { error: 'Missing menu item ID' },
+        { status: 400 }
+      );
+    }
+    
+    console.log('[API] Deleting menu item with ID:', id);
 
     await initializeMenuData();
+    console.log('[API] Reading menu data file');
     const data = await fs.readFile(DATA_FILE, 'utf-8');
-    const { sections } = JSON.parse(data);
-
+    
+    let parsedData;
+    try {
+      parsedData = JSON.parse(data);
+      console.log('[API] Successfully parsed menu data');
+    } catch (parseError) {
+      console.error('[API] Error parsing menu data:', parseError);
+      return NextResponse.json(
+        { error: 'Failed to parse menu data file' },
+        { status: 500 }
+      );
+    }
+    
+    const { sections } = parsedData;
+    console.log('[API] Total sections before deletion:', sections.length);
+    
+    let itemFound = false;
+    let removedFromCategory = '';
+    
     sections.forEach((section: MenuSection) => {
       const initialLength = section.items.length;
-      section.items = section.items.filter((item: MenuItem) => item.id !== id);
+      section.items = section.items.filter((item: MenuItem) => {
+        const shouldKeep = item.id !== id;
+        if (!shouldKeep) {
+          itemFound = true;
+          removedFromCategory = section.category;
+        }
+        return shouldKeep;
+      });
+      
       if (section.items.length < initialLength) {
         console.log('[API] Removed item from section:', section.category);
       }
     });
+    
+    if (!itemFound) {
+      console.log('[API] Warning: Item with ID', id, 'not found in any section');
+    }
 
     const nonEmptySections = sections.filter(
       (section: MenuSection) => section.items.length > 0
     );
-    console.log('[API] Remaining sections:', nonEmptySections.length);
-
-    await fs.writeFile(
-      DATA_FILE,
-      JSON.stringify({ sections: nonEmptySections }, null, 2)
-    );
-    console.log('[API] Successfully deleted menu item');
-    return NextResponse.json({ success: true });
+    console.log('[API] Remaining sections after deletion:', nonEmptySections.length);
+    
+    const updatedData = { sections: nonEmptySections };
+    try {
+      await fs.writeFile(DATA_FILE, JSON.stringify(updatedData, null, 2));
+      console.log('[API] Successfully wrote updated menu data to file');
+    } catch (writeError) {
+      console.error('[API] Error writing updated menu data:', writeError);
+      return NextResponse.json(
+        { error: 'Failed to save menu data' },
+        { status: 500 }
+      );
+    }
+    
+    console.log('[API] Successfully deleted menu item:', {
+      id,
+      itemFound,
+      removedFromCategory,
+      beforeSectionCount: sections.length,
+      afterSectionCount: nonEmptySections.length
+    });
+    
+    return NextResponse.json({ 
+      success: true,
+      details: {
+        id,
+        itemFound,
+        removedFromCategory
+      }
+    });
   } catch (error) {
     console.error('[API] Error deleting menu item:', error);
+    console.error('[API] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
     return NextResponse.json(
-      { error: 'Failed to delete menu item' },
+      { 
+        error: 'Failed to delete menu item',
+        details: error instanceof Error ? error.message : 'Unknown error'
+      },
       { status: 500 }
     );
   }

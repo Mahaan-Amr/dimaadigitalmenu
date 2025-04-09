@@ -8,6 +8,15 @@ import ImageUpload from '../../components/ImageUpload';
 import AdminOnboarding from '../../components/AdminOnboarding';
 import { MenuItem, MenuSection, MenuCategory, PREDEFINED_CATEGORIES } from '../../types/menu';
 
+// Interface for category with bilingual names
+interface Category {
+  id: string;
+  name: {
+    en: string;
+    fa: string;
+  };
+}
+
 const emptyMenuItem: MenuItem = {
   id: '',
   category: 'hot-coffee',
@@ -22,7 +31,13 @@ const emptyMenuItem: MenuItem = {
 };
 
 // Start with predefined categories, but allow for adding custom ones
-const initialCategories = [...PREDEFINED_CATEGORIES];
+const initialCategories: Category[] = PREDEFINED_CATEGORIES.map(id => ({
+  id,
+  name: {
+    en: id.charAt(0).toUpperCase() + id.slice(1).replace(/-/g, ' '),
+    fa: id // Default placeholder, will be replaced from API
+  }
+}));
 
 export default function AdminPage() {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
@@ -30,9 +45,12 @@ export default function AdminPage() {
   const [sections, setSections] = useState<MenuSection[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showOnboarding, setShowOnboarding] = useState(false);
-  const [categories, setCategories] = useState<string[]>(initialCategories);
+  const [categories, setCategories] = useState<Category[]>(initialCategories);
   const [isManagingCategories, setIsManagingCategories] = useState(false);
-  const [newCategory, setNewCategory] = useState('');
+  const [newCategory, setNewCategory] = useState<{id: string, name: {en: string, fa: string}}>({
+    id: '',
+    name: { en: '', fa: '' }
+  });
   const [draggingCategory, setDraggingCategory] = useState<string | null>(null);
   const [predefinedCategories, setPredefinedCategories] = useState<string[]>([...PREDEFINED_CATEGORIES]);
   const { logout } = useAuth();
@@ -113,11 +131,9 @@ export default function AdminPage() {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Are you sure you want to delete this item?')) {
-      return;
-    }
-
     try {
+      console.log('[Admin] Attempting to delete item with ID:', id);
+      
       const response = await fetch('/api/menu', {
         method: 'DELETE',
         headers: {
@@ -126,13 +142,23 @@ export default function AdminPage() {
         body: JSON.stringify({ id }),
       });
 
+      console.log('[Admin] Delete response status:', response.status);
+      
       if (!response.ok) {
-        throw new Error('Failed to delete menu item');
+        const errorData = await response.json().catch(() => ({}));
+        console.error('[Admin] Delete error response:', errorData);
+        throw new Error(`Failed to delete menu item: ${response.status} ${response.statusText}`);
       }
 
+      const result = await response.json();
+      console.log('[Admin] Delete success response:', result);
+      
       await fetchMenuItems();
+      alert('Item deleted successfully');
     } catch (error) {
       console.error('[Admin] Error deleting menu item:', error);
+      console.error('[Admin] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+      alert('Failed to delete item. Please check console for details.');
     }
   };
 
@@ -142,13 +168,36 @@ export default function AdminPage() {
   };
 
   const handleAddCategory = async () => {
-    if (newCategory.trim() && !categories.includes(newCategory.trim())) {
+    if (
+      newCategory.name.en.trim() && 
+      newCategory.name.fa.trim() && 
+      !categories.some(cat => cat.id === newCategory.id.trim() || 
+                              cat.name.en.toLowerCase() === newCategory.name.en.toLowerCase().trim())
+    ) {
+      // Generate a slug ID from the English name if not provided
+      const categoryId = newCategory.id.trim() || 
+                        newCategory.name.en.toLowerCase()
+                          .replace(/\s+/g, '-')
+                          .replace(/[^a-z0-9-]/g, '');
+      
+      // Create new category object
+      const categoryToAdd: Category = {
+        id: categoryId,
+        name: {
+          en: newCategory.name.en.trim(),
+          fa: newCategory.name.fa.trim()
+        }
+      };
+      
       // Add the new category to our local state
-      const updatedCategories = [...categories, newCategory.trim()];
+      const updatedCategories = [...categories, categoryToAdd];
       setCategories(updatedCategories);
       
-      // Reset the input field
-      setNewCategory('');
+      // Reset the input fields
+      setNewCategory({
+        id: '',
+        name: { en: '', fa: '' }
+      });
       
       // Save to the API
       try {
@@ -173,9 +222,9 @@ export default function AdminPage() {
     }
   };
 
-  const handleRemoveCategory = async (categoryToRemove: string) => {
+  const handleRemoveCategory = async (categoryId: string) => {
     // Check if the category is a predefined one
-    if (predefinedCategories.includes(categoryToRemove)) {
+    if (predefinedCategories.includes(categoryId)) {
       // Don't allow removing predefined categories
       return;
     }
@@ -186,7 +235,7 @@ export default function AdminPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ category: categoryToRemove }),
+        body: JSON.stringify({ categoryId }),
       });
       
       if (!response.ok) {
@@ -194,7 +243,7 @@ export default function AdminPage() {
       }
       
       // Remove the category from local state
-      setCategories(prev => prev.filter(category => category !== categoryToRemove));
+      setCategories(prev => prev.filter(category => category.id !== categoryId));
       
       // Refresh data
       await fetchCategories();
@@ -204,7 +253,7 @@ export default function AdminPage() {
     }
   };
 
-  const handleReorderCategories = async (updatedCategories: string[]) => {
+  const handleReorderCategories = async (updatedCategories: Category[]) => {
     setCategories(updatedCategories);
     
     try {
@@ -228,25 +277,25 @@ export default function AdminPage() {
     }
   };
 
-  const handleDragStart = (category: string) => {
-    setDraggingCategory(category);
+  const handleDragStart = (categoryId: string) => {
+    setDraggingCategory(categoryId);
   };
 
-  const handleDragOver = (e: React.DragEvent, category: string) => {
+  const handleDragOver = (e: React.DragEvent, categoryId: string) => {
     e.preventDefault();
     
-    if (!draggingCategory || draggingCategory === category) {
+    if (!draggingCategory || draggingCategory === categoryId) {
       return;
     }
     
     // Move the category in the array
     const updatedCategories = [...categories];
-    const draggedIndex = updatedCategories.indexOf(draggingCategory);
-    const targetIndex = updatedCategories.indexOf(category);
+    const draggedIndex = updatedCategories.findIndex(cat => cat.id === draggingCategory);
+    const targetIndex = updatedCategories.findIndex(cat => cat.id === categoryId);
     
     if (draggedIndex !== -1 && targetIndex !== -1) {
-      updatedCategories.splice(draggedIndex, 1);
-      updatedCategories.splice(targetIndex, 0, draggingCategory);
+      const [draggedCategory] = updatedCategories.splice(draggedIndex, 1);
+      updatedCategories.splice(targetIndex, 0, draggedCategory);
       setCategories(updatedCategories);
     }
   };
@@ -308,20 +357,62 @@ export default function AdminPage() {
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Add New Category
                 </label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={newCategory}
-                    onChange={(e) => setNewCategory(e.target.value)}
-                    className="flex-1 rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-                    placeholder="Category name"
-                  />
+                <div className="space-y-3">
+                  {/* Optional category ID (slug) */}
+                  <div>
+                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
+                      Category ID (optional - will be generated from English name)
+                    </label>
+                    <input
+                      type="text"
+                      value={newCategory.id}
+                      onChange={(e) => setNewCategory({...newCategory, id: e.target.value})}
+                      className="w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                      placeholder="e.g. hot-coffee, cake-desserts"
+                    />
+                  </div>
+                  
+                  {/* English name input */}
+                  <div>
+                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
+                      English Name
+                    </label>
+                    <input
+                      type="text"
+                      value={newCategory.name.en}
+                      onChange={(e) => setNewCategory({
+                        ...newCategory, 
+                        name: {...newCategory.name, en: e.target.value}
+                      })}
+                      className="w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                      placeholder="Hot Coffee"
+                    />
+                  </div>
+                  
+                  {/* Farsi name input */}
+                  <div>
+                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
+                      Farsi Name
+                    </label>
+                    <input
+                      type="text"
+                      value={newCategory.name.fa}
+                      onChange={(e) => setNewCategory({
+                        ...newCategory,
+                        name: {...newCategory.name, fa: e.target.value}
+                      })}
+                      dir="rtl"
+                      className="w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                      placeholder="قهوه گرم"
+                    />
+                  </div>
+                  
                   <button
                     onClick={handleAddCategory}
-                    className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700"
-                    disabled={!newCategory.trim() || categories.includes(newCategory.trim())}
+                    className="w-full px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700"
+                    disabled={!newCategory.name.en.trim() || !newCategory.name.fa.trim()}
                   >
-                    Add
+                    Add Category
                   </button>
                 </div>
               </div>
@@ -333,13 +424,13 @@ export default function AdminPage() {
                 <div className="space-y-2 max-h-60 overflow-y-auto">
                   {categories.map((category) => (
                     <div
-                      key={category}
+                      key={category.id}
                       draggable
-                      onDragStart={() => handleDragStart(category)}
-                      onDragOver={(e) => handleDragOver(e, category)}
+                      onDragStart={() => handleDragStart(category.id)}
+                      onDragOver={(e) => handleDragOver(e, category.id)}
                       onDragEnd={handleDragEnd}
                       className={`flex items-center justify-between p-2 rounded-md ${
-                        draggingCategory === category 
+                        draggingCategory === category.id 
                           ? 'bg-blue-100 dark:bg-blue-900' 
                           : 'bg-gray-50 dark:bg-gray-700'
                       } cursor-grab`}
@@ -354,16 +445,19 @@ export default function AdminPage() {
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
-                        {category}
-                        {predefinedCategories.includes(category) && (
+                        <div className="flex flex-col">
+                          <span>{category.name.en}</span>
+                          <span className="text-sm text-gray-500 dark:text-gray-400" dir="rtl">{category.name.fa}</span>
+                        </div>
+                        {predefinedCategories.includes(category.id) && (
                           <span className="ml-2 text-xs bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 px-2 py-0.5 rounded-full">
                             Default
                           </span>
                         )}
                       </span>
-                      {!predefinedCategories.includes(category) && (
+                      {!predefinedCategories.includes(category.id) && (
                         <button
-                          onClick={() => handleRemoveCategory(category)}
+                          onClick={() => handleRemoveCategory(category.id)}
                           className="text-red-500 hover:text-red-700"
                           aria-label="Remove category"
                         >
@@ -571,8 +665,8 @@ export default function AdminPage() {
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                       >
                         {categories.map((category) => (
-                          <option key={category} value={category}>
-                            {category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ')}
+                          <option key={category.id} value={category.id}>
+                            {category.name.en} / {category.name.fa}
                           </option>
                         ))}
                       </select>
@@ -843,7 +937,13 @@ export default function AdminPage() {
                           <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            onClick={() => handleDelete(item.id)}
+                            onClick={() => {
+                              const confirmDelete = window.confirm(`Are you sure you want to delete "${item.name.en}" / "${item.name.fa}"?`);
+                              if (confirmDelete) {
+                                console.log('[Admin UI] Delete button clicked for item:', item.id);
+                                handleDelete(item.id);
+                              }
+                            }}
                             className="px-3 py-1 text-sm bg-red-600 text-white rounded hover:bg-red-700 transition-colors"
                           >
                             Delete
